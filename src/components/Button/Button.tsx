@@ -27,50 +27,62 @@
 //   );
 // });
 
+import { component$ } from "@builder.io/qwik";
 import "./button.css";
 
 export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
   primary?: boolean;
-
+  condensed?: boolean;
+  fullWidth?: boolean;
   backgroundColor?: string;
-
   size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
   label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+  style?: string;
+  onClick?: any;
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const createButton = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  onClick,
-}: ButtonProps) => {
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.innerText = label;
-  btn.addEventListener("click", onClick);
-
-  const mode = primary
+export const Button = component$((props: ButtonProps) => {
+  const mode = props.primary
     ? "storybook-button--primary"
     : "storybook-button--secondary";
-  btn.className = ["storybook-button", `storybook-button--${size}`, mode].join(
-    " "
+
+  return (
+    <button
+      onClick$={props.onClick}
+      class={["storybook-button", `storybook-button--${props.size}`, mode].join(
+        " "
+      )}
+      style={{
+        fontSize: props.condensed ? "12px" : "16px",
+        width: props.fullWidth ? "100%" : "auto",
+        backgroundColor: props.backgroundColor,
+        ...(props.style && JSON.parse(props.style)),
+      }}
+    >
+      {props.label}
+    </button>
   );
+  // const btn = document.createElement("button");
+  // btn.type = "button";
+  // btn.innerText = props.label;
+  // btn.addEventListener("click",props.onClick);
 
-  btn.style.backgroundColor = backgroundColor;
+  // const mode = props.primary
+  //   ? "storybook-button--primary"
+  //   : "storybook-button--secondary";
+  // btn.className = ["storybook-button", `storybook-button--${props.size}`, mode].join(
+  //   " "
+  // );
 
-  return btn;
-};
+  // btn.style.fontSize = props.condensed ? "12px" : "16px";
+  // btn.style.width = props.fullWidth ? "100%" : "auto";
+  // btn.style.cssText = `background-color: ${props.backgroundColor};`;
+  // if (props.style) {
+  //   btn.style.cssText = props.style!;
+  // }
+
+  // return btn;
+});

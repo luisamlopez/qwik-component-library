@@ -1,22 +1,22 @@
-import './page.css';
-import { createHeader } from './Header';
+import "./page.css";
+import { createHeader } from "./Header";
 
 type User = {
   name: string;
 };
 
 export const createPage = () => {
-  const article = document.createElement('article');
+  const article = document.createElement("article");
   let user: User = null;
   let header = null;
 
   const rerenderHeader = () => {
-    const wrapper = document.getElementsByTagName('article')[0];
-    wrapper.replaceChild(createHeaderElement(), wrapper.firstChild);
+    const wrapper = document.getElementsByTagName("article")[0];
+    //    wrapper.replaceChild(createHeaderElement(), wrapper.firstChild);
   };
 
   const onLogin = () => {
-    user = { name: 'Jane Doe' };
+    user = { name: "Jane Doe" };
     rerenderHeader();
   };
 
@@ -26,7 +26,7 @@ export const createPage = () => {
   };
 
   const onCreateAccount = () => {
-    user = { name: 'Jane Doe' };
+    user = { name: "Jane Doe" };
     rerenderHeader();
   };
 
@@ -92,7 +92,7 @@ export const createPage = () => {
   </section>
 `;
 
-  article.insertAdjacentHTML('beforeend', section);
+  article.insertAdjacentHTML("beforeend", section);
 
   return article;
 };
