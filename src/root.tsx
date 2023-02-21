@@ -9,8 +9,7 @@ export default () => {
   // function click() {
   //   console.log("click");
   // }
-  const primary = "red";
-  const secondary = "blue";
+
   const menuOptions = [
     {
       name: "Docs",
@@ -64,13 +63,12 @@ export default () => {
         <Avatar size={100} url="https://placekitten.com/200/300" alt="Kitten" />
         <Button
           label="primary"
-          color={primary}
+          primary
           condensed
           onClick$={() => console.log("click")}
         />
         <Button
           label="secondary-large"
-          color={secondary}
           fullWidth
           size="large"
           condensed
@@ -79,17 +77,17 @@ export default () => {
 
         <Button
           label="Custom"
-          color="#ab123b"
+          backgroundColor="#ab123b"
           size="medium"
           onClick$={() => console.log("click")}
           margin="5px"
         />
+
         <Dropdown
           options={dropdownOptions}
           label="Dropdown de colores"
           fullWidth
           size="large"
-          color={primary}
         />
       </body>
     </>
