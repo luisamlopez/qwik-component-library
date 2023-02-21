@@ -1,8 +1,9 @@
 import { Avatar } from "./components/Avatar/Avatar";
 import { Button } from "./components/Button/Button";
 import { Counter } from "./components/Counter/counter";
-import { Logo } from "../src/components/Logo/logo";
+import { Logo } from "./components/Logo/Logo";
 import { Header } from "./components/Header/Header";
+import { Dropdown } from "./components/Dropdown/Dropdown";
 
 export default () => {
   // function click() {
@@ -27,6 +28,22 @@ export default () => {
       img: "https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg",
     },
   ];
+
+  const dropdownOptions = [
+    {
+      key: "Rojo",
+      value: "red",
+    },
+    {
+      key: "Azul",
+      value: "blue",
+    },
+    {
+      key: "Verde",
+      value: "green",
+    },
+  ];
+
   return (
     <>
       <head>
@@ -63,8 +80,16 @@ export default () => {
         <Button
           label="Custom"
           color="#ab123b"
-          fullWidth
+          size="medium"
           onClick$={() => console.log("click")}
+          margin="5px"
+        />
+        <Dropdown
+          options={dropdownOptions}
+          label="Dropdown de colores"
+          fullWidth
+          size="large"
+          color={primary}
         />
       </body>
     </>

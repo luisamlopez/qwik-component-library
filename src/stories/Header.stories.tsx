@@ -1,5 +1,5 @@
-import { Story, Meta } from "@storybook/html";
-import { createHeader, HeaderProps } from "../components/Header/Header";
+import { Story } from "@storybook/html";
+import { createHeader, Header, HeaderProps } from "../components/Header/Header";
 
 export default {
   title: "Example/Header",
@@ -14,7 +14,8 @@ export default {
     onCreateAccount: { action: "onCreateAccount" },
     menus: { control: "array" },
   },
-} as Meta;
+  component: Header,
+};
 
 const Template: Story<HeaderProps> = (args) => createHeader(args);
 

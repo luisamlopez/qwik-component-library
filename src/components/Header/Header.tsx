@@ -80,6 +80,8 @@ HeaderProps) => {
     user!.name
   }</b>!</span>`;
   account.innerHTML = welcomeMessage;
+  wrapper.appendChild(account);
+  header.appendChild(wrapper);
   return header;
 };
 

@@ -11,6 +11,8 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
   label: string;
   size?: "large" | "small" | "medium";
   style?: string;
+  borderRadius?: string;
+  margin?: string;
 } & ButtonActions;
 
 /**
@@ -22,7 +24,9 @@ export const createButton = ({
   label,
   onClick,
   fullWidth,
+  borderRadius,
   condensed,
+  margin,
 }: ButtonProps) => {
   const btn = document.createElement("button");
   btn.type = "button";
@@ -38,9 +42,13 @@ export const createButton = ({
 
   btn.style.backgroundColor = color;
 
+  btn.style.borderRadius = borderRadius ? borderRadius : "2px";
+
   btn.style.fontSize = condensed ? "12px" : "16px";
 
   btn.style.width = fullWidth ? "100%" : "auto";
+
+  btn.style.margin = margin ? margin : "0px";
 
   return btn;
 };
@@ -64,7 +72,8 @@ export const Button = component$((props: ButtonProps) => {
         fontSize: props.condensed ? "12px" : "16px",
         width: props.fullWidth ? "100%" : "auto",
         backgroundColor: props.color,
-        margin: "10px",
+        margin: props.margin,
+        borderRadius: props.borderRadius ? props.borderRadius : "2px",
       }}
     >
       {props.label}
