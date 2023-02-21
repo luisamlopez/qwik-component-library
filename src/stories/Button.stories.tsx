@@ -18,19 +18,17 @@ export default {
   component: Button,
 };
 
-// More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template: Story<ButtonProps> = (args) => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  //return `<div>${label}</div>`;
   return createButton(args);
 };
-
+//Main story
 export const Example = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
+
 Example.args = {
   label: "Button",
 };
 
+//Other stories
 export const Large = Template.bind({});
 Large.args = {
   size: "large",

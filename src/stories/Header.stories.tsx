@@ -1,56 +1,57 @@
-// import { Story, Meta } from '@storybook/html';
-// import { createHeader, HeaderProps } from './Header';
+import { Story, Meta } from "@storybook/html";
+import { createHeader, HeaderProps } from "../components/Header/Header";
 
-// export default {
-//   title: 'Example/Header',
-//   parameters: {
-//     // More on Story layout: https://storybook.js.org/docs/html/configure/story-layout
-//     layout: 'fullscreen',
-//   },
-//   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-//   argTypes: {
-//     onLogin: { action: 'onLogin' },
-//     onLogout: { action: 'onLogout' },
-//     onCreateAccount: { action: 'onCreateAccount' },
-//   },
-// } as Meta;
+export default {
+  title: "Example/Header",
+  parameters: {
+    layout: "fullscreen",
+  },
 
-// const Template: Story<HeaderProps> = (args) => createHeader(args);
+  argTypes: {
+    logo: { control: "text" },
+    onLogin: { action: "onLogin" },
+    onLogout: { action: "onLogout" },
+    onCreateAccount: { action: "onCreateAccount" },
+    menus: { control: "array" },
+  },
+} as Meta;
 
-// export const LoggedIn = Template.bind({});
-// LoggedIn.args = {
-//   user: {},
-// };
+const Template: Story<HeaderProps> = (args) => createHeader(args);
+
+export const LoggedIn = Template.bind({});
+LoggedIn.args = {
+  user: { name: "John Doe" },
+};
 
 // export const LoggedOut = Template.bind({});
 // LoggedOut.args = {};
 
-import { Meta } from "@storybook/html";
-import Header, { HeaderProps } from "./Header";
+// import { Meta } from "@storybook/html";
+// import Header, { HeaderProps } from "../components/Header/Header";
 
-export default {
-  title: "Header",
-} as Meta;
+// export default {
+//   title: "Header",
+// } as Meta;
 
-const Template = (args: HeaderProps) => <Header menus={args.menus} />;
+// const Template = (args: HeaderProps) => <Header menus={args.menus} />;
 
-export const Demo: any = Template.bind({
-  menus: [],
-});
+// export const Demo: any = Template.bind({
+//   menus: [],
+// });
 
-Demo.args = {
-  menus: [
-    {
-      name: "Docs",
-      link: "https://qwik.builder.io/docs/components/overview/",
-    },
-    {
-      name: "Examples",
-      link: "https://qwik.builder.io/examples/introduction/hello-world/",
-    },
-    {
-      name: "Tutorials",
-      link: "https://qwik.builder.io/tutorial/welcome/overview/",
-    },
-  ],
-};
+// Demo.args = {
+//   menus: [
+//     {
+//       name: "Docs",
+//       link: "https://qwik.builder.io/docs/components/overview/",
+//     },
+//     {
+//       name: "Examples",
+//       link: "https://qwik.builder.io/examples/introduction/hello-world/",
+//     },
+//     {
+//       name: "Tutorials",
+//       link: "https://qwik.builder.io/tutorial/welcome/overview/",
+//     },
+//   ],
+// };
