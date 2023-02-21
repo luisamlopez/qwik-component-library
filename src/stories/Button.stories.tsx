@@ -1,38 +1,33 @@
-import { Story, Meta } from "@storybook/html";
-import { createButton, ButtonProps } from "../components/Button/Button";
+import { Story } from "@storybook/html";
+import { Button, createButton, ButtonProps } from "../components/Button/Button";
 
-// More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
+//Default export includes arguments and actions for every story
 export default {
   title: "Example/Button",
-  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    color: { control: "color" },
     label: { control: "text" },
     onClick: { action: "onClick" },
-    primary: { control: "boolean" },
     size: {
       control: { type: "select" },
       options: ["small", "medium", "large"],
     },
+    condensed: { control: "boolean" },
+    fullWidth: { control: "boolean" },
   },
-} as Meta;
+  component: Button,
+};
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template: Story<ButtonProps> = (args) => {
   // You can either use a function to create DOM elements or use a plain html string!
-  // return `<div>${label}</div>`;
+  //return `<div>${label}</div>`;
   return createButton(args);
 };
 
-export const Primary = Template.bind({});
+export const Example = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: "Button",
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
+Example.args = {
   label: "Button",
 };
 

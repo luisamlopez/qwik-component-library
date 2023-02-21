@@ -4,9 +4,11 @@ import { Counter } from "./components/Counter/counter";
 import { Logo } from "./components/Logo/logo";
 
 export default () => {
-  function click() {
-    console.log("click");
-  }
+  // function click() {
+  //   console.log("click");
+  // }
+  const primary = "red";
+  const secondary = "blue";
   return (
     <>
       <head>
@@ -18,14 +20,25 @@ export default () => {
         <Counter />
         <Avatar size={100} url="https://placekitten.com/200/300" alt="Kitten" />
         <Button
-          label="Hola"
-          backgroundColor="#aaaaaa"
-          fullWidth
+          label="primary"
+          color={primary}
           condensed
-          onClick={click}
-          primary
+          onClick$={() => console.log("click")}
+        />
+        <Button
+          label="secondary-large"
+          color={secondary}
+          fullWidth
           size="large"
-          style="font-weight: bold;"
+          condensed
+          onClick$={() => console.log("click")}
+        />
+
+        <Button
+          label="Custom"
+          color="#ab123b"
+          fullWidth
+          onClick$={() => console.log("click")}
         />
       </body>
     </>
