@@ -5,13 +5,14 @@ import { Button, createButton, ButtonProps } from "../components/Button/Button";
 export default {
   title: "Example/Button",
   argTypes: {
-    color: { control: "color" },
+    backgroundColor: { control: "color" },
     label: { control: "text" },
     onClick: { action: "onClick" },
     size: {
       control: { type: "select" },
       options: ["small", "medium", "large"],
     },
+    primary: { control: "boolean" },
     condensed: { control: "boolean" },
     fullWidth: { control: "boolean" },
   },
@@ -21,28 +22,37 @@ export default {
 const Template: Story<ButtonProps> = (args) => {
   return createButton(args);
 };
-//Main story
-export const Example = Template.bind({});
 
-Example.args = {
+//Stories for each state
+export const Primary = Template.bind({});
+
+Primary.args = {
+  primary: true,
   label: "Button",
 };
 
-//Other stories
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: "Button",
+};
+
 export const Large = Template.bind({});
 Large.args = {
   size: "large",
+  primary: true,
   label: "Button",
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: "small",
+  primary: true,
   label: "Button",
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   size: "medium",
+  primary: true,
   label: "Button",
 };

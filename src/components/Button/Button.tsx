@@ -5,9 +5,10 @@ export interface ButtonActions {
   onClick?: () => void;
 }
 export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-  color?: "primary" | "secondary" | string;
+  backgroundColor?: string;
   condensed?: boolean;
   fullWidth?: boolean;
+  primary?: boolean;
   label: string;
   size?: "large" | "small" | "medium";
   style?: string;
@@ -19,8 +20,9 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
  * Primary UI component for user interaction
  */
 export const createButton = ({
+  primary = false,
   size = "medium",
-  color = "primary",
+  backgroundColor,
   label,
   onClick,
   fullWidth,
@@ -33,14 +35,15 @@ export const createButton = ({
   btn.innerText = label;
   btn.addEventListener("click", onClick!);
 
-  const mode = color
+  const mode = primary
     ? "storybook-button--primary"
     : "storybook-button--secondary";
+
   btn.className = ["storybook-button", `storybook-button--${size}`, mode].join(
     " "
   );
 
-  btn.style.backgroundColor = color;
+  btn.style.backgroundColor = backgroundColor!;
 
   btn.style.borderRadius = borderRadius ? borderRadius : "2px";
 
@@ -54,24 +57,22 @@ export const createButton = ({
 };
 
 export const Button = component$((props: ButtonProps) => {
-  const color = props.color
+  const mode = props.primary
     ? "storybook-button--primary"
     : "storybook-button--secondary";
 
   return (
     <button
       onClick$={props.onClick$}
-      class={[
-        "storybook-button",
-        `storybook-button--${props.size}`,
-        color,
-      ].join(" ")}
+      class={["storybook-button", `storybook-button--${props.size}`, mode].join(
+        " "
+      )}
       //If there is a style prop, use it, otherwise use the default
 
       style={{
         fontSize: props.condensed ? "12px" : "16px",
         width: props.fullWidth ? "100%" : "auto",
-        backgroundColor: props.color,
+        backgroundColor: props.backgroundColor,
         margin: props.margin,
         borderRadius: props.borderRadius ? props.borderRadius : "2px",
       }}
