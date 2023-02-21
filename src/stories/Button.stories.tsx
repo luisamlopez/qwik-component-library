@@ -15,6 +15,7 @@ export default {
     primary: { control: "boolean" },
     condensed: { control: "boolean" },
     fullWidth: { control: "boolean" },
+    borderRadius: { control: "text" },
   },
   component: Button,
 };
