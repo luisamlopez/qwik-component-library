@@ -87,7 +87,7 @@ export default () => {
           options={dropdownOptions}
           label="Dropdown de colores"
           fullWidth
-          size="large"
+          size="small"
         />
       </body>
     </>
