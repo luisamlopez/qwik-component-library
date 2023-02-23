@@ -1,15 +1,10 @@
-import { Avatar } from "./components/Avatar/Avatar";
 import { Button } from "./components/Button/Button";
-import { Counter } from "./components/Counter/counter";
-import { Logo } from "./components/Logo/Logo";
 import { Header } from "./components/Header/Header";
 import { Dropdown } from "./components/Dropdown/Dropdown";
+import { ImageBanner } from "./components/ImageBanner/ImageBanner";
+import { $ } from "@builder.io/qwik";
 
 export default () => {
-  // function click() {
-  //   console.log("click");
-  // }
-
   const menuOptions = [
     {
       name: "Docs",
@@ -43,6 +38,10 @@ export default () => {
     },
   ];
 
+  const onClickButton = $(() => {
+    alert("click");
+  });
+
   return (
     <>
       <head>
@@ -55,12 +54,12 @@ export default () => {
           logo="https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg"
           menus={menuOptions}
         />
-        <Logo
+        {/* <Logo
           logo="https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg"
           link="https://qwik.builder.io"
         />
         <Counter />
-        <Avatar size={100} url="https://placekitten.com/200/300" alt="Kitten" />
+        <Avatar size={100} url="https://placekitten.com/200/300" alt="Kitten" /> */}
         <Button
           label="primary"
           primary
@@ -88,6 +87,14 @@ export default () => {
           label="Dropdown de colores"
           fullWidth
           size="small"
+        />
+
+        <ImageBanner
+          title="Hello World"
+          message="lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
+          size="large"
+          onClick={onClickButton}
+          backgroundImage="https://goodlifebotanicals.com/wp-content/uploads/2019/03/gl-blue-white-branch.png"
         />
       </body>
     </>
