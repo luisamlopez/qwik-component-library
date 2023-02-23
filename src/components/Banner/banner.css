@@ -1,0 +1,46 @@
+.banner {
+  width: 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin: 4px;
+}
+
+.banner--success {
+  background-color: #32dc07;
+}
+
+.banner--error {
+  background-color: #ff0000;
+}
+
+.banner--warning {
+  background-color: #ffcc00;
+}
+
+.banner--info {
+  background-color: #00b8e6;
+}
+
+.banner__message {
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px;
+  border: 0;
+  line-height: 1;
+}
+
+.banner__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  text-align: center;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 11px 20px;
+  margin: 4px;
+}

@@ -3,6 +3,7 @@ import { Header } from "./components/Header/Header";
 import { Dropdown } from "./components/Dropdown/Dropdown";
 import { ImageBanner } from "./components/ImageBanner/ImageBanner";
 import { $ } from "@builder.io/qwik";
+import { Banner } from "./components/Banner/Banner";
 
 export default () => {
   const menuOptions = [
@@ -92,10 +93,11 @@ export default () => {
         <ImageBanner
           title="Hello World"
           message="lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
-          size="large"
           onClick={onClickButton}
           backgroundImage="https://goodlifebotanicals.com/wp-content/uploads/2019/03/gl-blue-white-branch.png"
         />
+
+        <Banner message="Hola" type="success" />
       </body>
     </>
   );

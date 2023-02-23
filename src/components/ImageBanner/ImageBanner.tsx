@@ -10,7 +10,6 @@ export type ImageBannerProps = HTMLAttributes<HTMLDivElement> & {
   backgroundImage: string;
   title: string;
   message: string;
-  size?: "large" | "small" | "medium";
 } & ImageBannerActions;
 
 //Arrow function to hide component
@@ -39,6 +38,8 @@ export const createImageBanner = (props: ImageBannerProps) => {
   title.innerHTML = props.title;
   message.innerHTML = props.message;
   exit.innerHTML = "X";
+
+  exit.onclick = onClickExit;
 
   button.appendChild(
     createButton({
