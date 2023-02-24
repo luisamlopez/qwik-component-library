@@ -3,7 +3,7 @@ import { Header } from "./components/Header/Header";
 import { Dropdown } from "./components/Dropdown/Dropdown";
 import { ImageBanner } from "./components/ImageBanner/ImageBanner";
 import { $ } from "@builder.io/qwik";
-import { Banner } from "./components/Banner/Banner";
+import { Alert } from "./components/Alert/Alert";
 
 export default () => {
   const menuOptions = [
@@ -97,10 +97,10 @@ export default () => {
           backgroundImage="https://goodlifebotanicals.com/wp-content/uploads/2019/03/gl-blue-white-branch.png"
         />
 
-        <Banner message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Banner message="¡Se ha registrado exitosamente!" type="success" />
-        <Banner message="Ya puede continuar navegando." type="info" />
-        <Banner
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
           message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
           type="warning"
         />
