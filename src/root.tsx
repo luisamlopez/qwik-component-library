@@ -97,7 +97,13 @@ export default () => {
           backgroundImage="https://goodlifebotanicals.com/wp-content/uploads/2019/03/gl-blue-white-branch.png"
         />
 
-        <Banner message="Hola" type="success" />
+        <Banner message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Banner message="¡Se ha registrado exitosamente!" type="success" />
+        <Banner message="Ya puede continuar navegando." type="info" />
+        <Banner
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />
       </body>
     </>
   );
