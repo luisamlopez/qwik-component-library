@@ -19,6 +19,14 @@ export interface HeaderProps {
   fontColor?: string;
 }
 
+//Arrow function to hide component
+export const onMenuClick = () => {
+  const navbar = document.getElementById("wrapper-menu");
+  const responsive_class_name = "responsive";
+
+  navbar!.classList.toggle(responsive_class_name);
+};
+
 export const createHeader = ({
   user,
 }: // onLogout,
@@ -98,7 +106,31 @@ export const Header = component$((props: HeaderProps) => {
     >
       <Logo logo={props.logo} link={props.link} width={100} />
 
-      <div class="wrapper">
+      <a
+        id="menu-icon"
+        class="menu-icon"
+        onClick$={() => {
+          onMenuClick();
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          class="w-6 h-6"
+          width={24}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+          />
+        </svg>
+      </a>
+
+      <div class="wrapper" id="wrapper-menu">
         {props.menus.map((menu) => (
           <a href={menu.link}>{menu.name}</a>
         ))}
@@ -111,14 +143,9 @@ export const Header = component$((props: HeaderProps) => {
           </span>
         ) : (
           <span>
-            <Button
-              size="small"
-              label="Log in"
-              backgroundColor="#123bac"
-              primary
-            />
-            or
-            <Button size="small" label="Sign up" primary />
+            <Button size="small" label="Log in" primary />
+            <p>or</p>
+            <Button size="small" label="Sign up" backgroundColor="#123bac" />
           </span>
         )}
       </div>
