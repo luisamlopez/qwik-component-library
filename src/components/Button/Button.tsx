@@ -55,7 +55,7 @@ export const createButton = ({
 
   btn.style.width = fullWidth ? "100%" : "auto";
 
-  btn.style.margin = margin ? margin : "0px";
+  btn.style.margin = margin ? margin : "4px";
 
   return btn;
 };
@@ -78,7 +78,6 @@ export const Button = component$((props: ButtonProps) => {
         //if it's primary, use the backgroundColor prop, otherwise use the mode
         backgroundColor:
           props.backgroundColor && props.primary ? props.backgroundColor : mode,
-
         margin: props.margin,
         borderRadius: props.borderRadius ? props.borderRadius : "2px",
         border: props.primary ? "none" : "1px solid" + props.backgroundColor,

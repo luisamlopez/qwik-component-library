@@ -1,14 +1,11 @@
-import { Button } from "../Button/Button";
-import { Logo } from "../Logo/Logo";
+import { Button, createButton } from "../Button/Button";
+import { createLogo, Logo } from "../Logo/Logo";
 import "./header.css";
-// import { createButton } from "../Button/Button";
 import { component$ } from "@builder.io/qwik";
 
 export interface HeaderProps {
   user?: { name: string };
-  // onLogin: () => void;
-  // onLogout: () => void;
-  // onCreateAccount: () => void;
+
   menus: {
     name: string;
     link: string;
@@ -19,81 +16,97 @@ export interface HeaderProps {
   fontColor?: string;
 }
 
-//Arrow function to hide component
+//Arrow function to menu responsive
 export const onMenuClick = () => {
   const navbar = document.getElementById("wrapper-menu");
   const responsive_class_name = "responsive";
-
   navbar!.classList.toggle(responsive_class_name);
 };
 
-export const createHeader = ({
-  user,
-}: // onLogout,
-// onLogin,
-// onCreateAccount,
-// logo,
-// menus,
-HeaderProps) => {
+export const createHeader = ({ user, logo, link, menus }: HeaderProps) => {
   const header = document.createElement("header");
-
+  const a = document.createElement("a");
   const wrapper = document.createElement("div");
-  wrapper.className = "wrapper";
-
-  const wrapperMenu = document.createElement("div");
-  wrapperMenu.className = "wrapper-menu";
-
-  wrapperMenu.insertAdjacentHTML("beforeend", `<ul></ul>`);
-  const logo = `<div>
-    <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" fillRule="evenodd">
-        <path
-          d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-          fill="#FFF" />
-        <path
-          d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-          fill="#555AB9" />
-        <path d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z" fill="#91BAF8" />
-      </g>
-    </svg>
-    <h1>Acme</h1>
-  </div>`;
-
-  wrapper.insertAdjacentHTML("afterbegin", logo);
   const account = document.createElement("div");
-  // if (user) {
-  //   account.appendChild(
-  //     createButton({ size: "small", label: "Log out", onClick: onLogout })
-  //   );
-  // } else {
-  //   account.appendChild(
-  //     createButton({ size: "small", label: "Log in", onClick: onLogin })
-  //   );
-  //   account.appendChild(
-  //     createButton({
-  //       size: "small",
-  //       label: "Sign up",
-  //       onClick: onCreateAccount,
-  //     })
-  //   );
-  // }
+  const welcome = document.createElement("span");
+  const span = document.createElement("span");
 
-  // menus.forEach((menu) => {
-  //   wrapper.insertAdjacentHTML(
-  //     "beforeend",
-  //     `<li key=${menu.name} style={{ padding: "5px" }}>${menu.name}</li>`
-  //   );
-  // });
-  //wrapper.appendChild(account);
-  // header.appendChild(wrapper);
-  // header.appendChild(wrapperMenu);
+  header.className = "header";
+  a.className = "menu-icon";
+  a.id = "menu-icon";
+  wrapper.className = "wrapper";
+  wrapper.id = "wrapper-menu";
+  account.className = "account";
+  welcome.className = "welcome";
 
-  const welcomeMessage = `<span class="welcome">Welcome, <b>${
-    user!.name
-  }</b>!</span>`;
-  account.innerHTML = welcomeMessage;
-  wrapper.appendChild(account);
+  header.appendChild(
+    createLogo({
+      logo: logo,
+      link: link,
+      width: 100,
+    })
+  );
+
+  a.onclick = onMenuClick;
+
+  const menu = `<svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          class="w-6 h-6"
+          width="24px"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+          />
+        </svg>`;
+
+  a.innerHTML = menu;
+
+  for (let i = 0; i < menus.length; i++) {
+    const a = document.createElement("a");
+    a.href = menus[i].link;
+    a.innerHTML = menus[i].name;
+    wrapper.appendChild(a);
+  }
+
+  if (!user) {
+    span.appendChild(
+      createButton({
+        size: "small",
+        label: "Log in",
+        primary: true,
+      })
+    );
+    const p = document.createElement("p");
+    p.innerHTML = "o";
+
+    span.appendChild(p);
+
+    span.appendChild(
+      createButton({
+        size: "small",
+        label: "Sign up",
+        backgroundColor: "#123bac",
+      })
+    );
+    account.append(span);
+  } else {
+    welcome.innerHTML = `Hola,  <b> ${user.name}</b>!`;
+  }
+
   header.appendChild(wrapper);
+  account.appendChild(welcome);
+  header.appendChild(account);
+
+  if (window.innerWidth < 700) {
+    header.appendChild(a);
+  }
+
   return header;
 };
 
@@ -144,7 +157,7 @@ export const Header = component$((props: HeaderProps) => {
         ) : (
           <span>
             <Button size="small" label="Log in" primary />
-            <p>or</p>
+            <p>o</p>
             <Button size="small" label="Sign up" backgroundColor="#123bac" />
           </span>
         )}
