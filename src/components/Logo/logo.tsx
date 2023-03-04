@@ -1,15 +1,16 @@
 import { component$ } from "@builder.io/qwik";
 
 export interface LogoProps {
-  logo: string;
+  logo: any;
   link: string;
+  width: number;
 }
 
 export const Logo = component$((props: LogoProps) => {
   return (
     <logo style={{ "text-align": "center" }}>
       <a href={props.link}>
-        <img alt="Logo" width={400} height={147} src={props.logo} />
+        <img alt="Logo" width={props.width} src={props.logo} />
       </a>
     </logo>
   );

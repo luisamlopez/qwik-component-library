@@ -4,6 +4,7 @@ import { Dropdown } from "./components/Dropdown/Dropdown";
 import { ImageBanner } from "./components/ImageBanner/ImageBanner";
 import { $ } from "@builder.io/qwik";
 import { Alert } from "./components/Alert/Alert";
+import { Logo } from "./components/Logo/Logo";
 
 export default () => {
   const menuOptions = [
@@ -49,54 +50,59 @@ export default () => {
         <meta charSet="utf-8" />
         <title>Qwik Blank App</title>
       </head>
-      <body>
-        <Header logo="https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg" />
+      <body
+        style={{
+          margin: 0,
+        }}
+      >
         <Header
-          logo="https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg"
+          logo="https://web-opentech.pages.dev/svg/ot-icon.svg"
+          link="https://lccopen.tech/"
           menus={menuOptions}
         />
+        <div style={{ height: 5 }}> . </div>
+        <Header
+          logo="https://web-opentech.pages.dev/svg/ot-icon.svg"
+          link="https://lccopen.tech/"
+          menus={menuOptions}
+          user={{ name: "Juan" }}
+        />
+
         {/* <Logo
           logo="https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg"
           link="https://qwik.builder.io"
-        />
+          width={400}
+        /> */}
+        {/*
         <Counter />
         <Avatar size={100} url="https://placekitten.com/200/300" alt="Kitten" /> */}
-        <Button
-          label="primary"
-          primary
-          condensed
-          onClick$={() => console.log("click")}
-        />
+        <Button label="primary" primary condensed onClick$={onClickButton} />
         <Button
           label="secondary-large"
-          fullWidth
-          size="large"
           condensed
-          onClick$={() => console.log("click")}
+          onClick$={onClickButton}
+          backgroundColor="#ab123b"
         />
-
         <Button
           label="Custom"
           backgroundColor="#ab123b"
           size="medium"
-          onClick$={() => console.log("click")}
+          onClick$={onClickButton}
           margin="5px"
+          primary
         />
-
         <Dropdown
           options={dropdownOptions}
           label="Dropdown de colores"
           fullWidth
           size="small"
         />
-
         <ImageBanner
           title="Hello World"
           message="lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
           onClick={onClickButton}
           backgroundImage="https://goodlifebotanicals.com/wp-content/uploads/2019/03/gl-blue-white-branch.png"
         />
-
         <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
         <Alert message="¡Se ha registrado exitosamente!" type="success" />
         <Alert message="Ya puede continuar navegando." type="info" />

@@ -11,10 +11,6 @@ export default {
     backgroundImage: { control: "text" },
     title: { control: "text" },
     message: { control: "text" },
-    size: {
-      control: { type: "select" },
-      options: ["small", "medium", "large"],
-    },
     onClick: { action: "clicked" },
   },
   component: ImageBanner,

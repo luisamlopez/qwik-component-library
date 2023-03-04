@@ -16,7 +16,7 @@
 .storybook-button--secondary {
   color: #333;
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  border: 1px solid #333;
 }
 
 .storybook-button--primary:hover {
@@ -24,7 +24,7 @@
 }
 
 .storybook-button--secondary:hover {
-  background-color: #fffdfd0f;
+  background-color: #1c9ceb7b;
 }
 
 .storybook-button--small {

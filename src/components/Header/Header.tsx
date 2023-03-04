@@ -1,3 +1,5 @@
+import { Button } from "../Button/Button";
+import { Logo } from "../Logo/Logo";
 import "./header.css";
 // import { createButton } from "../Button/Button";
 import { component$ } from "@builder.io/qwik";
@@ -7,12 +9,14 @@ export interface HeaderProps {
   // onLogin: () => void;
   // onLogout: () => void;
   // onCreateAccount: () => void;
-  menus?: {
+  menus: {
     name: string;
     link: string;
-    img?: string;
   }[];
   logo: string | object;
+  link: string;
+  backgroundColor?: string;
+  fontColor?: string;
 }
 
 export const createHeader = ({
@@ -87,31 +91,37 @@ HeaderProps) => {
 
 export const Header = component$((props: HeaderProps) => {
   return (
-    <header>
-      <div class="logo">
-        <a href="https://qwik.builder.io/" target="_blank">
-          <img
-            src={props.logo as string}
-            alt="Logo"
-            style={{ width: "100px", height: "100px" }}
-          />
-        </a>
+    <header
+      style={{
+        "background-color": props.backgroundColor,
+      }}
+    >
+      <Logo logo={props.logo} link={props.link} width={100} />
+
+      <div class="wrapper">
+        {props.menus.map((menu) => (
+          <a href={menu.link}>{menu.name}</a>
+        ))}
       </div>
-      {props.menus && (
-        <ul>
-          {props.menus!.map((menu) => (
-            <li key={menu.name} style={{ padding: "5px" }}>
-              {menu.img && <img src={menu.img} alt="Logo" />}
-              <a
-                href={menu.link}
-                // target="_blank"
-              >
-                {menu.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+
+      <div class="account">
+        {props.user ? (
+          <span class="welcome">
+            Hola, <b>{props.user.name}</b>!
+          </span>
+        ) : (
+          <span>
+            <Button
+              size="small"
+              label="Log in"
+              backgroundColor="#123bac"
+              primary
+            />
+            or
+            <Button size="small" label="Sign up" primary />
+          </span>
+        )}
+      </div>
     </header>
   );
 });
