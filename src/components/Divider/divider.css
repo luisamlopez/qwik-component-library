@@ -4,3 +4,7 @@
   width: 100%;
   padding: 0;
 }
+
+.divider:hover {
+  border-bottom: 2px solid rgb(0, 0, 0, 0.5);
+}

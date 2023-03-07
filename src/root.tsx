@@ -37,18 +37,6 @@ export default () => {
     { name: "Linkedin", link: "https://www.linkedin.com/company/builder-io/" },
   ];
 
-  const contact = [
-    {
-      name: "+584249511377",
-    },
-    {
-      name: "mail@mail.com",
-      link: "mailTo:mail@mail.com",
-    },
-    {
-      name: "Direccion",
-    },
-  ];
   const dropdownOptions = [
     {
       key: "Rojo",
@@ -93,7 +81,6 @@ export default () => {
           fontColor="#2bff28"
           backgroundColor="#afafaf"
         />
-
         <Button label="primary" primary condensed onClick$={onClickButton} />
         <Button
           label="secondary-large"
@@ -127,13 +114,98 @@ export default () => {
         <Alert
           message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
           type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
+        />{" "}
+        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
+        <Alert message="¡Se ha registrado exitosamente!" type="success" />
+        <Alert message="Ya puede continuar navegando." type="info" />
+        <Alert
+          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
+          type="warning"
         />
-
         <Footer
           logo="https://web-opentech.pages.dev/svg/ot-icon.svg"
           link="https://lccopen.tech/"
           name="Opentech"
-          contact={contact}
+          phone="+584249511377"
+          email="mail@mail.com"
+          address="Dirección"
           firstOption={menuOptions}
           secondOption={menuOptions}
           thirdOption={menuOptions}

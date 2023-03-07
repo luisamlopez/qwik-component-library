@@ -19,8 +19,10 @@ export interface FooterProps {
   name: string;
   logo: string | object;
   link: string;
-  contact: { name: string; link?: string }[];
 
+  address?: string;
+  phone?: string;
+  email?: string;
   //The arrays represent a hierarchy
   firstOption?: { name: string; link?: string }[];
   secondOption?: { name: string; link?: string }[];
@@ -75,14 +77,30 @@ export const createFooter = (props: FooterProps) => {
     })
   );
 
-  for (let i = 0; i < props.contact.length; i++) {
-    const a = document.createElement("a");
-    a.href = props.contact[i].link! || "#";
-    a.innerText = props.contact[i].name;
-    a.style.color = props.fontColor! || "#fff";
-    a.style.textDecoration = "none";
-    address.appendChild(a);
+  if (props.phone) {
+    const phone = document.createElement("a");
+    phone.href = props.phone || "#";
+    phone.innerText = props.phone;
+    phone.style.color = props.fontColor! || "#fff";
+    phone.style.textDecoration = "none";
+    address.appendChild(phone);
   }
+
+  if (props.email) {
+    const email = document.createElement("a");
+    email.href = "mailto:" + props.email || "#";
+    email.innerText = props.email;
+    email.style.color = props.fontColor! || "#fff";
+    email.style.textDecoration = "none";
+    address.appendChild(email);
+  }
+
+  if (props.address) {
+    const p = document.createElement("p");
+    p.innerText = props.address;
+    address.appendChild(p);
+  }
+
   footerInfo.appendChild(address);
 
   if (props.firstOption) {
@@ -170,13 +188,13 @@ export const Footer = component$((props: FooterProps) => {
     >
       <div class="footer-info">
         <Logo logo={props.logo} link={props.link} width={100} />
+
         <address>
-          {props.contact.map((item) => (
-            <a href={item.link || "#"} style={{ color: props.fontColor }}>
-              {item.name}
-            </a>
-          ))}
+          {props.phone && <a href={props.phone || "#"}> {props.phone}</a>}
+          {props.email && <a href={`mailto--${props.email}`}> {props.email}</a>}
+          {props.address && <p>{props.address}</p>}
         </address>
+
         {props.firstOption && (
           <div class="optionMenu">
             <h3>{props.firstOption![0].name}</h3>
