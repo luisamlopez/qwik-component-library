@@ -1,18 +1,24 @@
 footer {
   background: #1ea7fd;
   color: #fff;
+  width: 100%;
   text-align: center;
   padding: 5px 1px;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
-  position: relative;
+  position: fixed;
+  left: 0;
   bottom: 0;
-  margin-top: 10px;
 }
 
 address {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 10px;
   font-style: normal;
-  line-height: 5px;
+  font-weight: 700;
+  line-height: 20px;
 }
 
 .footer-info {
@@ -23,7 +29,28 @@ address {
   padding: 0 10px;
 }
 
+.optionMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.optionMenu h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
 .social-media {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.copyright {
+  margin: 10px;
+  align-items: center;
 }
