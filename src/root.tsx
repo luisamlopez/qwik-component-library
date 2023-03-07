@@ -11,17 +11,14 @@ export default () => {
     {
       name: "Docs",
       link: "https://qwik.builder.io/docs/components/overview/",
-      img: "https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg",
     },
     {
       name: "Examples",
       link: "https://qwik.builder.io/examples/introduction/hello-world/",
-      img: "https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg",
     },
     {
       name: "Tutorials",
       link: "https://qwik.builder.io/tutorial/welcome/overview/",
-      img: "https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg",
     },
   ];
 

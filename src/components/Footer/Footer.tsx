@@ -83,6 +83,7 @@ export const createFooter = (props: FooterProps) => {
     phone.innerText = props.phone;
     phone.style.color = props.fontColor! || "#fff";
     phone.style.textDecoration = "none";
+    phone.style.padding = "0";
     address.appendChild(phone);
   }
 
@@ -92,6 +93,7 @@ export const createFooter = (props: FooterProps) => {
     email.innerText = props.email;
     email.style.color = props.fontColor! || "#fff";
     email.style.textDecoration = "none";
+    email.style.padding = "0";
     address.appendChild(email);
   }
 
@@ -114,6 +116,7 @@ export const createFooter = (props: FooterProps) => {
       a.innerText = props.firstOption[i].name;
       a.style.color = props.fontColor! || "#fff";
       a.style.textDecoration = "none";
+      a.style.padding = "0";
       optionMenu.appendChild(a);
     }
 
@@ -131,6 +134,7 @@ export const createFooter = (props: FooterProps) => {
       a.innerText = props.secondOption[i].name;
       a.style.color = props.fontColor! || "#fff";
       a.style.textDecoration = "none";
+      a.style.padding = "0";
       optionMenu2.appendChild(a);
     }
     footerInfo.appendChild(optionMenu2);
@@ -147,6 +151,7 @@ export const createFooter = (props: FooterProps) => {
       a.innerText = props.thirdOption[i].name;
       a.style.color = props.fontColor! || "#fff";
       a.style.textDecoration = "none";
+      a.style.padding = "0";
       optionMenu3.appendChild(a);
     }
     footerInfo.appendChild(optionMenu3);
@@ -162,6 +167,7 @@ export const createFooter = (props: FooterProps) => {
       a.innerText = props.socialMedia[i].name;
       a.style.color = props.fontColor! || "#fff";
       a.style.textDecoration = "none";
+      a.style.padding = "0";
       socialMedia.appendChild(a);
     }
     grid.appendChild(socialMedia);

@@ -17,8 +17,13 @@ address {
   line-height: 20px;
 }
 
-p {
+address p {
   margin: 0;
+}
+
+address a {
+  margin: 0;
+  padding: 0;
 }
 
 .footer-info {
