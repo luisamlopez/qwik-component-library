@@ -4,7 +4,6 @@ import { Dropdown } from "./components/Dropdown/Dropdown";
 import { ImageBanner } from "./components/ImageBanner/ImageBanner";
 import { $ } from "@builder.io/qwik";
 import { Alert } from "./components/Alert/Alert";
-import { Logo } from "./components/Logo/Logo";
 
 export default () => {
   const menuOptions = [
@@ -66,16 +65,10 @@ export default () => {
           link="https://lccopen.tech/"
           menus={menuOptions}
           user={{ name: "Juan" }}
+          fontColor="#2bff28"
+          backgroundColor="#afafaf"
         />
 
-        {/* <Logo
-          logo="https://raw.githubusercontent.com/BuilderIO/qwik/main/.github/assets/qwik-logo.svg"
-          link="https://qwik.builder.io"
-          width={400}
-        /> */}
-        {/*
-        <Counter />
-        <Avatar size={100} url="https://placekitten.com/200/300" alt="Kitten" /> */}
         <Button label="primary" primary condensed onClick$={onClickButton} />
         <Button
           label="secondary-large"

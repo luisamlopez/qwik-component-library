@@ -23,7 +23,7 @@ export const onMenuClick = () => {
   navbar!.classList.toggle(responsive_class_name);
 };
 
-export const createHeader = ({ user, logo, link, menus }: HeaderProps) => {
+export const createHeader = (props: HeaderProps) => {
   const header = document.createElement("header");
   const a = document.createElement("a");
   const wrapper = document.createElement("div");
@@ -41,8 +41,8 @@ export const createHeader = ({ user, logo, link, menus }: HeaderProps) => {
 
   header.appendChild(
     createLogo({
-      logo: logo,
-      link: link,
+      logo: props.logo,
+      link: props.link,
       width: 100,
     })
   );
@@ -67,14 +67,15 @@ export const createHeader = ({ user, logo, link, menus }: HeaderProps) => {
 
   a.innerHTML = menu;
 
-  for (let i = 0; i < menus.length; i++) {
+  for (let i = 0; i < props.menus.length; i++) {
     const a = document.createElement("a");
-    a.href = menus[i].link;
-    a.innerHTML = menus[i].name;
+    a.style.color = props.fontColor!;
+    a.href = props.menus[i].link;
+    a.innerHTML = props.menus[i].name;
     wrapper.appendChild(a);
   }
 
-  if (!user) {
+  if (!props.user) {
     span.appendChild(
       createButton({
         size: "small",
@@ -91,19 +92,28 @@ export const createHeader = ({ user, logo, link, menus }: HeaderProps) => {
       createButton({
         size: "small",
         label: "Sign up",
-        backgroundColor: "#123bac",
+        backgroundColor: "#fff",
+        fontColor: "#fff",
       })
     );
     account.append(span);
   } else {
-    welcome.innerHTML = `Hola,  <b> ${user.name}</b>!`;
+    welcome.innerHTML = `Hola,&nbsp; <b> ${props.user.name}</b>!`;
   }
+
+  //Styles
+  header.style.backgroundColor = props.backgroundColor!;
+  wrapper.style.backgroundColor = props.backgroundColor!;
+
+  welcome.style.color = props.fontColor!;
+  wrapper.style.color = props.fontColor!;
+  a.style.color = props.fontColor!;
 
   header.appendChild(wrapper);
   account.appendChild(welcome);
   header.appendChild(account);
 
-  if (window.innerWidth < 700) {
+  if (window.innerWidth < 800) {
     header.appendChild(a);
   }
 
@@ -125,6 +135,7 @@ export const Header = component$((props: HeaderProps) => {
         onClick$={() => {
           onMenuClick();
         }}
+        style={{ color: props.fontColor ? props.fontColor : "#fff" }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -143,22 +154,36 @@ export const Header = component$((props: HeaderProps) => {
         </svg>
       </a>
 
-      <div class="wrapper" id="wrapper-menu">
+      <div
+        class="wrapper"
+        id="wrapper-menu"
+        style={{ "background-color": props.backgroundColor }}
+      >
         {props.menus.map((menu) => (
-          <a href={menu.link}>{menu.name}</a>
+          <a href={menu.link} style={{ color: props.fontColor! }}>
+            {menu.name}
+          </a>
         ))}
       </div>
 
       <div class="account">
         {props.user ? (
-          <span class="welcome">
-            Hola, <b>{props.user.name}</b>!
+          <span
+            class="welcome"
+            style={{ color: props.fontColor ? "#fff" : props.fontColor! }}
+          >
+            Hola,&nbsp; <b>{props.user.name}</b>!
           </span>
         ) : (
           <span>
             <Button size="small" label="Log in" primary />
             <p>o</p>
-            <Button size="small" label="Sign up" backgroundColor="#123bac" />
+            <Button
+              size="small"
+              label="Sign up"
+              backgroundColor="#fff"
+              fontColor="#fff"
+            />
           </span>
         )}
       </div>

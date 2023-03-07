@@ -11,6 +11,9 @@ export default {
     logo: { control: "text" },
     link: { control: "text" },
     menus: { control: "array" },
+    backgroundColor: { control: "color" },
+    fontColor: { control: "color" },
+    user: { control: "object" },
   },
   component: Header,
 };
