@@ -4,6 +4,7 @@ import { Dropdown } from "./components/Dropdown/Dropdown";
 import { ImageBanner } from "./components/ImageBanner/ImageBanner";
 import { $ } from "@builder.io/qwik";
 import { Alert } from "./components/Alert/Alert";
+import { Footer } from "./components/Footer/Footer";
 
 export default () => {
   const menuOptions = [
@@ -24,6 +25,30 @@ export default () => {
     },
   ];
 
+  const socialMedia = [
+    { name: "Facebook", link: "https://www.facebook.com/BuilderIO/" },
+    { name: "Twitter", link: "https://twitter.com/builder_io" },
+    { name: "Instagram", link: "https://www.instagram.com/builder_io/" },
+    {
+      name: "Youtube",
+      link: "https://www.youtube.com/channel/UC0ZQZ1X0XZ1X0XZ1X0XZ1X0",
+    },
+    { name: "Pinterest", link: "https://www.pinterest.com/builderio/" },
+    { name: "Linkedin", link: "https://www.linkedin.com/company/builder-io/" },
+  ];
+
+  const contact = [
+    {
+      name: "+584249511377",
+    },
+    {
+      name: "mail@mail.com",
+      link: "mailTo:mail@mail.com",
+    },
+    {
+      name: "Direccion",
+    },
+  ];
   const dropdownOptions = [
     {
       key: "Rojo",
@@ -102,6 +127,17 @@ export default () => {
         <Alert
           message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
           type="warning"
+        />
+
+        <Footer
+          logo="https://web-opentech.pages.dev/svg/ot-icon.svg"
+          link="https://lccopen.tech/"
+          name="Opentech"
+          contact={contact}
+          firstOption={menuOptions}
+          secondOption={menuOptions}
+          thirdOption={menuOptions}
+          socialMedia={socialMedia}
         />
       </body>
     </>

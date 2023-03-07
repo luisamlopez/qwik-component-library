@@ -6,6 +6,7 @@ export { Header } from "./components/Header/Header";
 export { Dropdown } from "./components/Dropdown/Dropdown";
 export { ImageBanner } from "./components/ImageBanner/ImageBanner";
 export { Alert } from "./components/Alert/Alert";
+export { Footer } from "./components/Footer/Footer";
 
 // export { Input } from "./components/Input/input";
 // export { Select } from "./components/Select/select";
