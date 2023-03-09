@@ -142,10 +142,10 @@ export default () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gridGap: "10px",
-            padding: "10px",
-            margin: " 0 auto",
+            gridTemplateColumns: "repeat(auto-fill, 240px);",
+            gridGap: "20px",
+            padding: "0",
+            margin: "10px",
           }}
         >
           <CardProduct
