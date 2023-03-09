@@ -5,6 +5,8 @@ import { ImageBanner } from "./components/ImageBanner/ImageBanner";
 import { $ } from "@builder.io/qwik";
 import { Alert } from "./components/Alert/Alert";
 import { Footer } from "./components/Footer/Footer";
+import { CardProduct } from "./components/Cards/CardProduct/CardProduct";
+// import { Grid } from "./components/Grid/Grid";
 
 export default () => {
   const menuOptions = [
@@ -50,6 +52,10 @@ export default () => {
   ];
 
   const onClickButton = $(() => {
+    alert("click");
+  });
+
+  const onClickCard = $(() => {
     alert("click");
   });
 
@@ -111,91 +117,114 @@ export default () => {
         <Alert
           message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
           type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />{" "}
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
         />
+        <CardProduct
+          image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          description="Bicicleta de montaña"
+          name="Bicicleta"
+          link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          price={100}
+          onClick={onClickCard}
+        />
+
+        <CardProduct
+          image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          description="Bicicleta de montaña"
+          name="Bicicleta 2"
+          link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          price={200}
+          onClick={onClickCard}
+          backgroundColor="#afafaf"
+          fontColor="#2bff28"
+        />
+
+        <h1>Grid</h1>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gridGap: "10px",
+            padding: "10px",
+            margin: " 0 auto",
+          }}
+        >
+          <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={100}
+            onClick={onClickCard}
+          />
+
+          <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta 2"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={200}
+            onClick={onClickCard}
+            backgroundColor="#afafaf"
+            fontColor="#2bff28"
+          />
+          <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={100}
+            onClick={onClickCard}
+          />
+
+          <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta 2"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={200}
+            onClick={onClickCard}
+            backgroundColor="#afafaf"
+            fontColor="#2bff28"
+          />
+          <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={100}
+            onClick={onClickCard}
+          />
+
+          <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta 2"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={200}
+            onClick={onClickCard}
+            backgroundColor="#afafaf"
+            fontColor="#2bff28"
+          />
+          <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={100}
+            onClick={onClickCard}
+          />
+
+          <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta 2"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={200}
+            onClick={onClickCard}
+            backgroundColor="#afafaf"
+            fontColor="#2bff28"
+          />
+        </div>
         <Footer
           logo="https://web-opentech.pages.dev/svg/ot-icon.svg"
           link="https://lccopen.tech/"
