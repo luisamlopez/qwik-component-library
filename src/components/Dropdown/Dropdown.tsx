@@ -42,6 +42,8 @@ export const createDropdown = (props: DropdownProps) => {
 
   div.style.width = props.fullWidth ? "100%" : "auto";
 
+  div.style.marginBottom = "4px";
+
   div.appendChild(label);
   div.appendChild(select);
   return div;
@@ -62,9 +64,11 @@ export const Dropdown = component$((props: DropdownProps) => {
           `dropdown-select--${props.size}`,
           color,
         ].join(" ")}
+        id={props.id}
         style={{
           width: props.fullWidth ? "100%" : "auto",
           backgroundColor: props.color,
+          marginBottom: "4px",
         }}
       >
         (

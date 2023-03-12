@@ -3,9 +3,9 @@ import { Header } from "./components/Header/Header";
 import { Dropdown } from "./components/Dropdown/Dropdown";
 import { ImageBanner } from "./components/ImageBanner/ImageBanner";
 import { $ } from "@builder.io/qwik";
-import { Alert } from "./components/Alert/Alert";
 import { Footer } from "./components/Footer/Footer";
 import { CardProduct } from "./components/Cards/CardProduct/CardProduct";
+import { CardService } from "./components/Cards/CardService/CardService";
 // import { Grid } from "./components/Grid/Grid";
 
 export default () => {
@@ -55,6 +55,13 @@ export default () => {
     alert("click");
   });
 
+  const onClick = $(() => {
+    const dropdown = document.getElementById("color") as HTMLSelectElement;
+    const selection = dropdown.selectedIndex;
+    const option = dropdown.options[selection];
+    alert("Value: " + option.value + " Text: " + option.text);
+  });
+
   const onClickCard = $(() => {
     alert("click");
   });
@@ -86,9 +93,9 @@ export default () => {
         />
         <Button label="primary" primary condensed onClick$={onClickButton} />
         <Button
-          label="secondary-large"
+          label="Controlar dropdown"
           condensed
-          onClick$={onClickButton}
+          onClick$={onClick}
           backgroundColor="#ab123b"
         />
         <Button
@@ -104,6 +111,7 @@ export default () => {
           label="Dropdown de colores"
           fullWidth
           size="small"
+          id="color"
         />
         <ImageBanner
           title="Hello World"
@@ -111,31 +119,10 @@ export default () => {
           onClick={onClickButton}
           backgroundImage="https://goodlifebotanicals.com/wp-content/uploads/2019/03/gl-blue-white-branch.png"
         />
-        <Alert message="Ha ocurrido un error, intente de nuevo" type="error" />
-        <Alert message="¡Se ha registrado exitosamente!" type="success" />
-        <Alert message="Ya puede continuar navegando." type="info" />
-        <Alert
-          message="La contraseña debe tener al menos una mayúscula, un caracter especial y un número."
-          type="warning"
-        />
-        <CardProduct
-          image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          description="Bicicleta de montaña"
-          name="Bicicleta"
-          link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          price={100}
-          onClick={onClickCard}
-        />
-
-        <CardProduct
-          image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          description="Bicicleta de montaña"
-          name="Bicicleta 2"
-          link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          price={200}
-          onClick={onClickCard}
-          backgroundColor="#afafaf"
-          fontColor="#2bff28"
+        <CardService
+          name="Servicio 1"
+          description="Lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
+          link="svsdv sdf"
         />
 
         <h1>Grid</h1>
@@ -193,36 +180,6 @@ export default () => {
             link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             price={100}
             onClick={onClickCard}
-          />
-
-          <CardProduct
-            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            description="Bicicleta de montaña"
-            name="Bicicleta 2"
-            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            price={200}
-            onClick={onClickCard}
-            backgroundColor="#afafaf"
-            fontColor="#2bff28"
-          />
-          <CardProduct
-            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            description="Bicicleta de montaña"
-            name="Bicicleta"
-            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            price={100}
-            onClick={onClickCard}
-          />
-
-          <CardProduct
-            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            description="Bicicleta de montaña"
-            name="Bicicleta 2"
-            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            price={200}
-            onClick={onClickCard}
-            backgroundColor="#afafaf"
-            fontColor="#2bff28"
           />
         </div>
         <Footer
