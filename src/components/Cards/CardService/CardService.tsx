@@ -5,6 +5,7 @@ export interface CardServiceProps {
   name: string;
   link: string;
   description: string;
+  onClick: () => void;
 }
 
 export const randomColor = (): string => {
@@ -54,6 +55,7 @@ export const createCardService = (props: CardServiceProps) => {
   icon.innerText = getInitials(props.name).toUpperCase();
 
   button.innerText = "➡";
+  button.onclick = props.onClick;
 
   serviceCard.appendChild(icon);
 
@@ -81,7 +83,9 @@ export const CardService = component$((props: CardServiceProps) => {
           <p class="service-description">{props.description}</p>
         </div>
       </div>
-      <div class="button">➡</div>
+      <div class="button" onClick$={props.onClick}>
+        ➡
+      </div>
     </div>
   );
 });

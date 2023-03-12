@@ -123,6 +123,7 @@ export default () => {
           name="Servicio 1"
           description="Lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
           link="svsdv sdf"
+          onClick={onClickCard}
         />
 
         <h1>Grid</h1>
