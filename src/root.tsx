@@ -175,6 +175,43 @@ export default () => {
             onClick={onClickCard}
           />
         </div>
+
+        <h1>Grid servicios</h1>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, 260px);",
+            gridGap: "20px",
+            padding: "0",
+            margin: "10px",
+          }}
+        >
+          <CardService
+            name="Servicio 1"
+            description="Lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
+            onClick={onClickCard}
+          />
+          <CardService
+            name="Servicio 1"
+            description="Lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
+            onClick={onClickCard}
+          />
+          <CardService
+            name="Servicio 1"
+            description="Lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
+            onClick={onClickCard}
+          />
+          <CardService
+            name="Servicio 1"
+            description="Lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
+            onClick={onClickCard}
+          />
+          <CardService
+            name="Servicio 1"
+            description="Lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
+            onClick={onClickCard}
+          />
+        </div>
         <Footer
           logo="https://web-opentech.pages.dev/svg/ot-icon.svg"
           link="https://lccopen.tech/"
