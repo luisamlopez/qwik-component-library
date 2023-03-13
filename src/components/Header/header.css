@@ -38,11 +38,19 @@ span p {
   display: none;
 }
 
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   padding: 15px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -88,5 +96,6 @@ span p {
   .welcome,
   .account {
     display: none;
+    justify-content: center;
   }
 }

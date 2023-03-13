@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import "./cardProduct.css";
 import { component$ } from "@builder.io/qwik";
 import { Avatar, createAvatar } from "../../Avatar/Avatar";
-import { Button, createButton } from "../../Button/Button";
 
 export interface CardProductProps {
   name: string;

@@ -83,14 +83,7 @@ export default () => {
           menus={menuOptions}
         />
         <div style={{ height: 5 }}> . </div>
-        <Header
-          logo="https://web-opentech.pages.dev/svg/ot-icon.svg"
-          link="https://lccopen.tech/"
-          menus={menuOptions}
-          user={{ name: "Juan" }}
-          fontColor="#2bff28"
-          backgroundColor="#afafaf"
-        />
+
         <Button label="primary" primary condensed onClick$={onClickButton} />
         <Button
           label="Controlar dropdown"
@@ -122,7 +115,6 @@ export default () => {
         <CardService
           name="Servicio 1"
           description="Lorem impsum dolor sit amet lorem impsum dolor sit amet lorem impsum dolor sit amet  "
-          link="svsdv sdf"
           onClick={onClickCard}
         />
 
