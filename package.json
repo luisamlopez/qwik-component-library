@@ -63,6 +63,7 @@
     "vite": "4.1.1"
   },
   "dependencies": {
-    "@qwikest/icons": "^0.0.4"
+    "@qwikest/icons": "^0.0.4",
+    "@storybook/addon-docs": "^6.5.16"
   }
 }
