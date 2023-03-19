@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { CardProduct } from "../../components/Cards/CardProduct/CardProduct";
+
+<Meta title="MDX/CardProduct" component={CardProduct} />
+
+# CardProduct
+
+Para usar este componente, debes importarlo Button desde:
+
+```
+../components/Cards/CardProduct/CardProduct
+```
+
+El componente Tarjeta de producto/CardProduct se utiliza para mostrar un producto con una imagen, nombre, descripción, precio, y un enlace para comprarlo. Puede ser personalizado utilizando una variedad de props para adaptarse a las necesidades de la aplicación.
+
+### Props
+
+- `name: string` - El nombre del producto.
+- `price: number` - El precio del producto.
+- `image: string` - La URL de la imagen del producto.
+- `link: string` - La URL para comprar el producto.
+- `description: string` - La descripción del producto.
+- `onClick?: () => void` - Función para ejecutar cuando se hace clic en la tarjeta.
+
+### Estilos
+
+El componente Tarjeta de producto puede ser personalizado utilizando las siguientes props:
+
+- `backgroundColor?: string` - El color de fondo de la tarjeta.
+- `fontColor?: string` - El color de la fuente de la tarjeta.
+
+### Ejemplo de uso
+
+```
+import React from 'react';
+import ProductCard from './ProductCard';
+
+function App() {
+  return (
+    <div>
+    <CardProduct
+            image="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            description="Bicicleta de montaña"
+            name="Bicicleta"
+            link="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            price={100}
+            onClick={$(() => {
+                alert("click");
+            })}
+          />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+### Notas
+
+- Las props `name`, `price`, `image`, `link`, y `description` son requeridas y deben ser cadenas o números no vacíos.
+- Las props `backgroundColor` y `fontColor` son opcionales y tienen valores por defecto.
+- El tamaño predefinido es de 240px de anchura. Esto puede ser cambiado en el archivo CSS.

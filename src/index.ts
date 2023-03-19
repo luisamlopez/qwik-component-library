@@ -1,14 +1,11 @@
 export { Logo } from "./components/Logo/Logo";
-export { Counter } from "./components/Counter/counter";
 export { Button } from "./components/Button/Button";
 export { Avatar } from "./components/Avatar/Avatar";
 export { Header } from "./components/Header/Header";
 export { Dropdown } from "./components/Dropdown/Dropdown";
 export { ImageBanner } from "./components/ImageBanner/ImageBanner";
-export { Alert } from "./components/Alert/Alert";
 export { Footer } from "./components/Footer/Footer";
 export { CardProduct } from "./components/Cards/CardProduct/CardProduct";
-export { Grid } from "./components/Grid/Grid";
 
 // export { Input } from "./components/Input/input";
 // export { Select } from "./components/Select/select";
