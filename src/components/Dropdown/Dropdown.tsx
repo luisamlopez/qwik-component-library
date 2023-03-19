@@ -1,9 +1,6 @@
 import { HTMLAttributes, component$ } from "@builder.io/qwik";
 import "./dropdown.css";
 
-export interface DropdownActions {
-  onClick?: () => void;
-}
 export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
   color?: "primary" | "secondary" | string;
   fontColor?: string;
@@ -11,7 +8,11 @@ export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
   label: string;
   size?: "large" | "small" | "medium";
   options: { key: string; value: any }[];
-} & DropdownActions;
+};
+
+/**
+ * Primary UI component for user interaction on Storybook
+ */
 
 export const createDropdown = (props: DropdownProps) => {
   //const form = document.createElement("form");
@@ -49,6 +50,9 @@ export const createDropdown = (props: DropdownProps) => {
   return div;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const Dropdown = component$((props: DropdownProps) => {
   const color = props.color
     ? "storybook-button--primary"

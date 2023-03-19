@@ -17,6 +17,9 @@ export const onClickExit = () => {
   document.getElementById("image-banner")!.style.display = "none";
 };
 
+/**
+ * Primary UI component for user interaction on Storybook
+ */
 export const createImageBanner = (props: ImageBannerProps) => {
   const wrapper = document.createElement("div");
   const div = document.createElement("div");
@@ -61,6 +64,9 @@ export const createImageBanner = (props: ImageBannerProps) => {
   return wrapper;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const ImageBanner = component$((props: ImageBannerProps) => {
   return (
     <div

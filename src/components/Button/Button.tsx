@@ -1,10 +1,7 @@
 import "./button.css";
-import { HTMLAttributes, component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 
-export interface ButtonActions {
-  onClick?: () => void;
-}
-export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
+export interface ButtonProps {
   backgroundColor?: string;
   condensed?: boolean;
   fullWidth?: boolean;
@@ -14,10 +11,11 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
   fontColor?: string;
   borderRadius?: string;
   margin?: string;
-} & ButtonActions;
+  onClick?: () => void;
+}
 
 /**
- * Primary UI component for user interaction
+ * Primary UI component for user interaction on Storybook
  */
 export const createButton = ({
   primary = false,
@@ -63,6 +61,9 @@ export const createButton = ({
   return btn;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const Button = component$((props: ButtonProps) => {
   const mode = props.primary
     ? "storybook-button--primary"
@@ -70,7 +71,7 @@ export const Button = component$((props: ButtonProps) => {
 
   return (
     <button
-      onClick$={props.onClick$}
+      onClick$={props.onClick}
       class={["storybook-button", `storybook-button--${props.size}`, mode].join(
         " "
       )}

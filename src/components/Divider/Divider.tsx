@@ -7,6 +7,9 @@ export interface DividerProps {
   height?: string;
 }
 
+/**
+ * Primary UI component for user interaction on Storybook
+ */
 export const createDivider = (props: DividerProps) => {
   const divider = document.createElement("div");
   divider.className = "divider";
@@ -18,6 +21,9 @@ export const createDivider = (props: DividerProps) => {
   return divider;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const Divider = component$((props: DividerProps) => {
   const height = props.height || "2px";
   const width = props.width || "100%";

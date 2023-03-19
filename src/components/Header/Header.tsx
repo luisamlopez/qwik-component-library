@@ -16,13 +16,16 @@ export interface HeaderProps {
   fontColor?: string;
 }
 
-//Arrow function to menu responsive
+//Arrow function to make menu responsive
 export const onMenuClick = () => {
   const navbar = document.getElementById("wrapper-menu");
   const responsive_class_name = "responsive";
   navbar!.classList.toggle(responsive_class_name);
 };
 
+/**
+ * Primary UI component for user interaction on Storybook
+ */
 export const createHeader = (props: HeaderProps) => {
   const header = document.createElement("header");
   const a = document.createElement("a");
@@ -120,6 +123,9 @@ export const createHeader = (props: HeaderProps) => {
   return header;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const Header = component$((props: HeaderProps) => {
   return (
     <header

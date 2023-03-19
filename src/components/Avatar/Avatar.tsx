@@ -8,7 +8,9 @@ export interface AvatarProps {
   //Styles
   borderRadius?: string;
 }
-
+/**
+ * Primary UI component for user interaction on Storybook
+ */
 export const createAvatar = (props: AvatarProps) => {
   const avatar = document.createElement("img");
 
@@ -24,6 +26,9 @@ export const createAvatar = (props: AvatarProps) => {
   return avatar;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const Avatar = component$((props: AvatarProps) => {
   const borderRadius = props.borderRadius || "4px";
   return (

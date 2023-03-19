@@ -65,7 +65,11 @@ export const getTextColor = function (bgColor: string) {
 
   return whiteContrast > blackContrast ? "#ffffff" : "#000000";
 };
+//End of functions to get random color and match the proper font color with the background color
 
+/**
+ * Primary UI component for user interaction on Storybook
+ */
 export const createCardService = (props: CardServiceProps) => {
   const serviceCard = document.createElement("div");
   const icon = document.createElement("div");
@@ -105,6 +109,9 @@ export const createCardService = (props: CardServiceProps) => {
   return serviceCard;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const CardService = component$((props: CardServiceProps) => {
   const bgColor = randomColor();
   return (

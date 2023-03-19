@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Button } from "../../components/Button/Button";
+import { Source } from "@storybook/addon-docs";
+import dedent from "ts-dedent";
+
+<Meta title="MDX/Button" component={Button} />
+
+# Button
+
+Para usar este componente, debes importarlo Button desde:
+
+```
+../components/Button/Button
+```
+
+El componente Button se utiliza para mostrar un elemento de botón clickeable dentro de una interfaz de usuario. Puede ser personalizado mediante una variedad de props para adaptarse a las necesidades de la aplicación.
+
+### Props
+
+- `backgroundColor?: string` - Establece el color de fondo del botón.
+- `condensed?: boolean` - Determina si el botón debe ser visualizado en un formato condensado.
+- `fullWidth?: boolean` - Determina si el botón debe ser visualizado en ancho completo.
+- `primary?: boolean` - Determina si el botón debe ser estilizado como botón principal.
+- `label: string` - El texto para mostrar dentro del botón.
+- `size?: "large" | "small" | "medium"` - Establece el tamaño del botón.
+- `fontColor?: string` - Establece el color de fuente del botón.
+- `borderRadius?: string` - Establece el radio de borde del botón.
+- `margin?: string` - Establece el margen externo alrededor del botón.
+- `onClick?: () => void` - Función de callback para ejecutar cuando se hace clic en el botón.
+
+### Ejemplo de uso
+
+```
+
+import Button from "../"components/Button/Button";
+
+function App() {
+  return (
+    <div>
+      <Button
+        label="Haz clic aquí"
+        backgroundColor="#007bff"
+        fontColor="#fff"
+        primary
+        size="large"
+        borderRadius="5px"
+        margin="10px"
+        onClick={$(() => {
+            alert("click");
+          })}
+      />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+### Notas
+
+- El prop `label` es requerido y debe ser una cadena no vacía.
+- Los props `backgroundColor` y `fontColor` son opcionales y tienen valores por defecto.
+- Los props `condensed`, `fullWidth` y `primary` son opcionales y se establecen por defecto en `false`.
+- El prop `size` es opcional y tiene como valor por defecto `"medium"`.
+- Los props `borderRadius` y `margin` son opcionales y tienen valores por defecto.
+- El prop `onClick` es opcional y no se ejecutará si no se proporciona.

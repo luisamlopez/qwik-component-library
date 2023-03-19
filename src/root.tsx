@@ -84,18 +84,25 @@ export default () => {
         />
         <div style={{ height: 5 }}> . </div>
 
-        <Button label="primary" primary condensed onClick$={onClickButton} />
+        <Button
+          label="primary"
+          primary
+          condensed
+          onClick={$(() => {
+            alert("click");
+          })}
+        />
         <Button
           label="Controlar dropdown"
           condensed
-          onClick$={onClick}
+          onClick={onClick}
           backgroundColor="#ab123b"
         />
         <Button
           label="Custom"
           backgroundColor="#ab123b"
           size="medium"
-          onClick$={onClickButton}
+          onClick={onClickButton}
           margin="5px"
           primary
         />

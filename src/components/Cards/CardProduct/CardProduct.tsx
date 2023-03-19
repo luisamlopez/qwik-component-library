@@ -14,6 +14,9 @@ export interface CardProductProps {
   fontColor?: string;
 }
 
+/**
+ * Primary UI component for user interaction on Storybook
+ */
 export const createCardProduct = (props: CardProductProps) => {
   const productCard = document.createElement("div");
   const productInfo = document.createElement("div");
@@ -50,6 +53,9 @@ export const createCardProduct = (props: CardProductProps) => {
   return productCard;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const CardProduct = component$((props: CardProductProps) => {
   return (
     <div

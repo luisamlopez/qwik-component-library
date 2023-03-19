@@ -6,6 +6,9 @@ export interface LogoProps {
   width: number;
 }
 
+/**
+ * Primary UI component for user interaction on Storybook
+ */
 export const createLogo = (props: LogoProps) => {
   const logo = document.createElement("logo");
   const a = document.createElement("a");
@@ -21,6 +24,9 @@ export const createLogo = (props: LogoProps) => {
   return logo;
 };
 
+/**
+ * Primary UI component with Qwik
+ */
 export const Logo = component$((props: LogoProps) => {
   return (
     <logo style={{ "text-align": "center" }}>

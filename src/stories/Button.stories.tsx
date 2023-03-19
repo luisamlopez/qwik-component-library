@@ -18,6 +18,14 @@ export default {
     borderRadius: { control: "text" },
   },
   component: Button,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Para usar este componente, debes importarlo Button desde: ../components/Button/Button El componente Button se utiliza para mostrar un elemento de botón clickeable dentro de una interfaz de usuario. Puede ser personalizado mediante una variedad de props para adaptarse a las necesidades de la aplicación.",
+      },
+    },
+  },
 };
 
 const Template: Story<ButtonProps> = (args) => {
