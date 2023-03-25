@@ -1,0 +1,90 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Footer } from "../../components/Footer/Footer";
+
+<Meta title="Documentation/Footer" component={Footer} />
+
+# Footer
+
+El componente Footer se utiliza para mostrar un pie de página con un logotipo, información de contacto, opciones de menú y enlaces a redes sociales. Se puede personalizar usando una variedad de props para adaptarse a las necesidades de la aplicación.
+
+## Props
+
+El componente Footer se puede personalizar usando las siguientes props:
+
+- `name: string` - El nombre de la organización.
+- `logo: string | object` - La URL o el objeto que representa la imagen del logotipo.
+- `link: string` - El enlace para el logotipo.
+- `address?: string` - La dirección de la organización.
+- `phone?: string` - El número de teléfono de la organización.
+- `email?: string` - La dirección de correo electrónico de la organización.
+- `firstOption?: { name: string; link?: string }[]` - Un array de objetos que representan el primer nivel de las opciones del menú. Cada objeto debe tener una propiedad `name` y una propiedad `link` opcional.
+- `secondOption?: { name: string; link?: string }[]` - Un array de objetos que representan el segundo nivel de las opciones del menú. Cada objeto debe tener una propiedad `name` y una propiedad `link` opcional.
+- `thirdOption?: { name: string; link?: string }[]` - Un array de objetos que representan el tercer nivel de las opciones del menú. Cada objeto debe tener una propiedad `name` y una propiedad `link` opcional.
+- `socialMedia?: { name: string; link?: string }[]` - Un array de objetos que representan los enlaces a las redes sociales. Cada objeto debe tener una propiedad `name` y una propiedad `link` opcional.
+
+## Estilos
+
+El componente Footer se puede personalizar usando las siguientes props:
+
+- `backgroundColor?: string` - El color de fondo del pie de página.
+- `fontColor?: string` - El color de la fuente del pie de página.
+
+## Ejemplo de uso
+
+```
+import Footer from '../components/Footer/Footer';
+
+function App() {
+  const firstOptions = [
+    { name: 'Opción 1', link: '/opcion-1' },
+    { name: 'Opción 2', link: '/opcion-2' },
+    { name: 'Opción 3', link: '/opcion-3' },
+  ];
+
+  const secondOptions = [
+    { name: 'Subopción 1', link: '/subopcion-1' },
+    { name: 'Subopción 2', link: '/subopcion-2' },
+    { name: 'Subopción 3', link: '/subopcion-3' },
+  ];
+
+  const thirdOptions = [
+    { name: 'Sub-subopción 1', link: '/sub-subopcion-1' },
+    { name: 'Sub-subopción 2', link: '/sub-subopcion-2' },
+    { name: 'Sub-subopción 3', link: '/sub-subopcion-3' },
+  ];
+
+  const socialMedia = [
+    { name: 'Facebook', link: '<https://www.facebook.com>' },
+    { name: 'Twitter', link: '<https://www.twitter.com>' },
+    { name: 'Instagram', link: '<https://www.instagram.com>' },
+  ];
+
+  return (
+    <Footer
+      name="Mi organización"
+      logo="<https://ejemplo.com/logo.png>"
+      link="/"
+      address="123 Calle Principal"
+      phone="(123) 456-7890"
+      email="info@ejemplo.com"
+      firstOption={firstOptions}
+      secondOption={secondOptions}
+      thirdOption={thirdOptions}
+      socialMedia={socialMedia}
+      backgroundColor="#f8f8f8"
+      fontColor="#333"
+    />
+  );
+}
+
+export default App;
+
+```
+
+## Notas
+
+- Las props `name`, `logo` y `link` son requeridas y deben ser una cadena no vacía y una cadena o un objeto que represente la URL o la imagen del logotipo, respectivamente.
+- Las props `firstOption`, `secondOption` y `thirdOption` son opcionales y deben ser un array de objetos con una propiedad `name` y una propiedad `link` opcional.
+- La prop `socialMedia` es opcional y debe ser un array de objetos con una propiedad `name` y una propiedad `link` opcional.
+- Las props `address`, `phone` y `email` son opcionales y deben ser una cadena que represente la dirección, el número de teléfono y la dirección de correo electrónico de la organización, respectivamente.
+- Las props `backgroundColor` y `fontColor` son opcionales y tienen valores predeterminados.

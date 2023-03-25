@@ -1,0 +1,54 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Header } from "../../components/Header/Header";
+
+<Meta title="Documentation/Header" component={Header} />
+
+# Header
+
+El componente Header se utiliza para mostrar un encabezado con un logotipo, información de usuario y opciones de menú. Puede personalizarse utilizando una variedad de props para adaptarse a las necesidades de la aplicación.
+
+## Props
+
+El componente Header puede personalizarse utilizando las siguientes props:
+
+- `user?: { name: string }` - Un objeto que contiene el nombre del usuario, es opcional ya que tiene dos versiones, si hay un usuario logeado o no, si no se quisiera esta opción, se elimina todo el `div` con la clase `account`.
+- `menus: { name: string; link: string }[]` - Un array de objetos que representan las opciones de menú. Cada objeto debe tener una propiedad `name` y `link`.
+- `logo: string | object` - La URL o el objeto que representa la imagen del logotipo.
+- `link: string` - El enlace para el logotipo.
+- `backgroundColor?: string` - El color de fondo del encabezado.
+- `fontColor?: string` - El color de fuente del encabezado.
+
+## Ejemplo de uso
+
+```
+import Header from '../components/Header/Header';
+
+function App() {
+  const menus = [
+    { name: 'Inicio', link: '/' },
+    { name: 'Acerca de', link: '/acerca-de' },
+    { name: 'Contacto', link: '/contacto' },
+  ];
+
+  return (
+    <Header
+      user={{ name: 'Juan Pérez' }}
+      menus={menus}
+      logo="<https://ejemplo.com/logo.png>"
+      link="/"
+      backgroundColor="#007bff"
+      fontColor="#fff"
+    />
+  );
+}
+
+export default App;
+
+```
+
+## Notas
+
+- La prop `menus` es obligatoria y debe ser un array de objetos con una propiedad `name` y `link`.
+- La prop `user` es opcional y debe ser un objeto con una propiedad `name`.
+- Las props `logo` y `link` son obligatorias y deben ser una cadena que represente la URL o el objeto de la imagen del logotipo y el enlace para el logotipo, respectivamente.
+- Las props `backgroundColor` y `fontColor` son opcionales y tienen valores predeterminados.

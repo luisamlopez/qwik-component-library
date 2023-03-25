@@ -38,7 +38,7 @@ export const createDropdown = (props: DropdownProps) => {
     " "
   );
   label.style.color = props.fontColor!;
-  select.style.backgroundColor = props.color!;
+  select.style.border = "0.5px solid" + props.color!;
   select.style.width = props.fullWidth ? "100%" : "auto";
 
   div.style.width = props.fullWidth ? "100%" : "auto";
@@ -54,24 +54,17 @@ export const createDropdown = (props: DropdownProps) => {
  * Primary UI component with Qwik
  */
 export const Dropdown = component$((props: DropdownProps) => {
-  const color = props.color
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
   return (
     <div class="dropdown">
       <label for="dropdown">{props.label}</label>
       <select
         autoFocus
         name="dropdown"
-        class={[
-          "dropdown-select",
-          `dropdown-select--${props.size}`,
-          color,
-        ].join(" ")}
+        class={["dropdown-select", `dropdown-select--${props.size}`].join(" ")}
         id={props.id}
         style={{
           width: props.fullWidth ? "100%" : "auto",
-          backgroundColor: props.color,
+          border: "1.5px solid" + props.color,
           marginBottom: "4px",
         }}
       >

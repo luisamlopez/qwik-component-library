@@ -1,0 +1,66 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Dropdown } from "../../components/Dropdown/Dropdown";
+
+<Meta title="Documentation/Dropdown" component={Dropdown} />
+
+# Dropdown
+
+El componente Dropdown se utiliza para mostrar una lista de opciones que se pueden seleccionar en un menú desplegable. Puede ser personalizado utilizando una variedad de props para adaptarse a las necesidades de la aplicación.
+
+## Props
+
+El componente Dropdown se puede personalizar utilizando las siguientes props:
+
+- `color?: "primary" | "secondary" | string` - El color del menú desplegable.
+- `fontColor?: string` - El color de fuente del menú desplegable.
+- `fullWidth?: boolean` - Si el menú desplegable debe ser visualizado en ancho completo.
+- `label: string` - El texto del botón del menú desplegable.
+- `size?: "large" | "small" | "medium"` - El tamaño del menú desplegable.
+- `options: { key: string; value: any }[]` - Un arreglo de objetos que representan las opciones del menú. Cada objeto debe tener una clave `key` y un valor `value`.
+
+## Ejemplo de uso
+
+```
+import Dropdown from "../components/Dropdown/Dropdown";
+
+interface Option {
+  key: string;
+  value: any;
+}
+
+  private options: Option[] = [
+    { key: "option1", value: "Opción 1" },
+    { key: "option2", value: "Opción 2" },
+    { key: "option3", value: "Opción 3" },
+  ];
+
+  render() {
+    return (
+       <Dropdown
+          options={options}
+          label="Dropdown de colores"
+          fullWidth
+          size="small"
+          color="#ab163b"
+          id="color"
+        />
+    );
+  }
+
+```
+
+## Notas
+
+- La prop `label` es requerida y debe ser una cadena no vacía.
+- La prop `options` es requerida y debe ser un arreglo de objetos con una clave `key` y un valor `value`.
+- Las props `color`, `fullWidth` y `size` son opcionales y tienen valores predeterminados.
+- Por ser un componente, el atributo `id` siempre estará disponible, por lo que no se incluyó en los props pero si se puede utilizar como en el ejemplo que se muestra más adelante para poder acceder a los valores del menú.
+- Para acceder a los valores del menú se puede hacer así:
+
+```
+ const dropdown = document.getElementById("color") as HTMLSelectElement;
+    const selection = dropdown.selectedIndex;
+    const option = dropdown.options[selection];
+    alert("Value: " + option.value + " Text: " + option.text);
+
+```

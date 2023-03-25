@@ -1,16 +1,15 @@
-import { HTMLAttributes, QRL, component$ } from "@builder.io/qwik";
+import { QRL, component$ } from "@builder.io/qwik";
 import "./imageBanner.css";
 import { Button, createButton } from "../Button/Button";
 
-export interface ImageBannerActions {
-  onClick: QRL<() => void>;
-}
+export interface ImageBannerActions {}
 
-export type ImageBannerProps = HTMLAttributes<HTMLDivElement> & {
+export interface ImageBannerProps {
   backgroundImage: string;
   title: string;
   message: string;
-} & ImageBannerActions;
+  onClick: QRL<() => void>;
+}
 
 //Arrow function to hide component
 export const onClickExit = () => {
@@ -93,7 +92,7 @@ export const ImageBanner = component$((props: ImageBannerProps) => {
           label="Ir al sitio"
           primary
           backgroundColor="transparent"
-          onClick$={props.onClick}
+          onClick={props.onClick}
         />
       </div>
       <div class="image-banner__exit">

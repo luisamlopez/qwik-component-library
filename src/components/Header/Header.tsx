@@ -5,7 +5,6 @@ import { component$ } from "@builder.io/qwik";
 
 export interface HeaderProps {
   user?: { name: string };
-
   menus: {
     name: string;
     link: string;

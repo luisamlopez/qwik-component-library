@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { CardService } from "../../components/Cards/CardService/CardService";
+
+<Meta title="Documentation/CardService" component={CardService} />
+
+# CardService
+
+El componente CardService se utiliza para mostrar una tarjeta con un nombre, descripción y una función onClick opcional. Puede personalizarse utilizando una variedad de props para adaptarse a las necesidades de la aplicación.
+
+### Props
+
+- `name: string` - El nombre de la tarjeta.
+- `description: string` - La descripción de la tarjeta.
+- `onClick?: () => void` - Función a ejecutar cuando se hace clic en la tarjeta.
+
+### Ejemplo de uso
+
+```
+import {CardService} from ""../components/Cards/CardService/CardService"
+
+function App() {
+  return (
+    <div>
+      <CardService
+        name="Nombre del servicio"
+        description="Esta es una descripción del servicio."
+        onClick={$(() => {
+                alert("click");
+            })}
+      />
+    </div>
+  );
+}
+
+
+```
+
+### Notas
+
+- Las props `name` y `description` son requeridas y deben ser cadenas no vacías.
+- La prop `onClick` es opcional y no se ejecutará si no se proporciona.
+- Las iniciales del servicio se muestran mediante una función que toma las dos primeras iniciales del nombre del servicio. El color de fondo se genera de manera aleatoria y el de la fuente puede ser blanco o negro dependiendo del contraste, en ambos se utiliza una serie de funciones.

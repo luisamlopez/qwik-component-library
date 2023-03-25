@@ -100,7 +100,7 @@ export default () => {
         />
         <Button
           label="Custom"
-          backgroundColor="#ab123b"
+          backgroundColor="#ab163b"
           size="medium"
           onClick={onClickButton}
           margin="5px"
@@ -111,6 +111,7 @@ export default () => {
           label="Dropdown de colores"
           fullWidth
           size="small"
+          color="#ab163b"
           id="color"
         />
         <ImageBanner

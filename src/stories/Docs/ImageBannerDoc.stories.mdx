@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { ImageBanner } from "../../components/ImageBanner/ImageBanner";
+
+<Meta title="Documentation/ImageBanner" component={ImageBanner} />
+
+# ImageBanner
+
+El componente ImageBanner se utiliza para mostrar un banner con una imagen de fondo, un título y un mensaje. Puede ser personalizado utilizando una variedad de props para adaptarse a las necesidades de la aplicación.
+
+## Props
+
+- `backgroundImage: string` - La URL de la imagen de fondo del banner.
+- `title: string` - El título del banner.
+- `message: string` - El mensaje del banner.
+- `onClick?: () => void` - Función para ejecutar cuando se hace clic en el banner.
+
+## Ejemplo de uso
+
+```
+
+import {ImageBanner} from "../components/ImageBanner/ImageBanner";
+
+function App() {
+  return (
+    <div>
+      <ImageBanner
+        backgroundImage="<https://example.com/banner-image.jpg>"
+        title="Título del banner"
+        message="Este es un mensaje del banner."
+        onClick={() => {console.log("Se hizo clic en el banner de la imagen!");}}
+
+      />
+    </div>
+  );
+}
+
+
+```
+
+## Notas
+
+- Las props `backgroundImage`, `title` y `message` son requeridas y deben ser cadenas no vacías.
+- La prop `onClick` NO es opcional, se utiliza para pasar la información al botón del banner, que es un componente de igual manera.

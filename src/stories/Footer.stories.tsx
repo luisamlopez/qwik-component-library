@@ -52,8 +52,8 @@ const socialMedia = [
 
 const Template: Story<FooterProps> = (args) => createFooter(args);
 
-export const Example = Template.bind({});
-Example.args = {
+export const All = Template.bind({});
+All.args = {
   logo: "https://web-opentech.pages.dev/svg/ot-icon.svg",
   link: "https://lccopen.tech/",
   socialMedia: socialMedia,
@@ -61,5 +61,43 @@ Example.args = {
   email: "mail@mail.com",
   address: "Direccion",
   firstOption: menuOptions,
+  secondOption: menuOptions,
+  thirdOption: menuOptions,
   name: "Opentech",
+};
+
+export const OneMenu = Template.bind({});
+OneMenu.args = {
+  logo: "https://web-opentech.pages.dev/svg/ot-icon.svg",
+  link: "https://lccopen.tech/",
+  phone: "+584249511377",
+  email: "mail@mail.com",
+  address: "Direccion",
+  firstOption: menuOptions,
+  name: "Opentech",
+};
+
+export const TwoMenus = Template.bind({});
+TwoMenus.args = {
+  logo: "https://web-opentech.pages.dev/svg/ot-icon.svg",
+  link: "https://lccopen.tech/",
+  phone: "+584249511377",
+  email: "mail@mail.com",
+  address: "Direccion",
+  firstOption: menuOptions,
+  secondOption: menuOptions,
+  name: "Opentech",
+};
+
+export const ThreeMenus = Template.bind({});
+ThreeMenus.args = {
+  logo: "https://web-opentech.pages.dev/svg/ot-icon.svg",
+  link: "https://lccopen.tech/",
+  phone: "+584249511377",
+  email: "mail@mail.com",
+  address: "Direccion",
+  name: "Opentech",
+  firstOption: menuOptions,
+  secondOption: menuOptions,
+  thirdOption: menuOptions,
 };
