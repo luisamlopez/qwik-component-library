@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button } from "./components/Button/Button";
 import { Header } from "./components/Header/Header";
 import { Dropdown } from "./components/Dropdown/Dropdown";
@@ -6,6 +7,7 @@ import { $ } from "@builder.io/qwik";
 import { Footer } from "./components/Footer/Footer";
 import { CardProduct } from "./components/Cards/CardProduct/CardProduct";
 import { CardService } from "./components/Cards/CardService/CardService";
+import { Carousel } from "./components/Carousel/Carousel";
 // import { Grid } from "./components/Grid/Grid";
 
 export default () => {
@@ -48,6 +50,51 @@ export default () => {
     {
       key: "Verde",
       value: "green",
+    },
+  ];
+
+  const slides = [
+    {
+      name: "Delmoliton",
+      image: "/assets/img/example1.webp",
+      phrase: "Small text",
+      short_description:
+        "Lorem ipsum dolor sshort_descriptionsectetur adipisicing elit.",
+    },
+    {
+      name: "Assmolition",
+      image: "/assets/img/example2.webp",
+      phrase: "Really small text",
+      short_description:
+        "Labore ducimus quos quam est eaque aliquid magnam! Ut",
+    },
+    {
+      name: "Milmolition",
+      image: "/assets/img/example3.webp",
+      phrase: "Not so small text",
+      short_description:
+        "similique eum optio odit eius voluptatem error placeat cupiditate inventore facere nemo voluptas",
+    },
+    {
+      name: "Delmoliton",
+      image: "/assets/img/example1.webp",
+      phrase: "Small text",
+      short_description:
+        "Lorem ipsum dolor sshort_descriptionsectetur adipisicing elit.",
+    },
+    {
+      name: "Assmolition",
+      image: "/assets/img/example2.webp",
+      phrase: "Really small text",
+      short_description:
+        "Labore ducimus quos quam est eaque aliquid magnam! Ut",
+    },
+    {
+      name: "Milmolition",
+      image: "/assets/img/example3.webp",
+      phrase: "Not so small text",
+      short_description:
+        "similique eum optio odit eius voluptatem error placeat cupiditate inventore facere nemo voluptas",
     },
   ];
 
@@ -222,6 +269,9 @@ export default () => {
             onClick={onClickCard}
           />
         </div>
+
+        <Carousel slides={slides} />
+
         <Footer
           logo="https://web-opentech.pages.dev/svg/ot-icon.svg"
           link="https://lccopen.tech/"
