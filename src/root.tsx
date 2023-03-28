@@ -61,47 +61,48 @@ export default () => {
       phrase: "Small text",
       short_description:
         "Lorem ipsum dolor sshort_descriptionsectetur adipisicing elit.",
+      link: "https://qwik.builder.io/docs/components/overview/",
     },
-    {
-      name: "Assmolition",
-      image:
-        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
-      phrase: "Really small text",
-      short_description:
-        "Labore ducimus quos quam est eaque aliquid magnam! Ut",
-    },
-    {
-      name: "Milmolition",
-      image:
-        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
-      phrase: "Not so small text",
-      short_description:
-        "similique eum optio odit eius voluptatem error placeat cupiditate inventore facere nemo voluptas",
-    },
-    {
-      name: "Delmoliton",
-      image:
-        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
-      phrase: "Small text",
-      short_description:
-        "Lorem ipsum dolor sshort_descriptionsectetur adipisicing elit.",
-    },
-    {
-      name: "Assmolition",
-      image:
-        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
-      phrase: "Really small text",
-      short_description:
-        "Labore ducimus quos quam est eaque aliquid magnam! Ut",
-    },
-    {
-      name: "Milmolition",
-      image:
-        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
-      phrase: "Not so small text",
-      short_description:
-        "similique eum optio odit eius voluptatem error placeat cupiditate inventore facere nemo voluptas",
-    },
+    // {
+    //   name: "Assmolition",
+    //   image:
+    //     "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
+    //   phrase: "Really small text",
+    //   short_description:
+    //     "Labore ducimus quos quam est eaque aliquid magnam! Ut",link: "https://qwik.builder.io/docs/components/overview/",
+    // },
+    // {
+    //   name: "Milmolition",
+    //   image:
+    //     "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
+    //   phrase: "Not so small text",
+    //   short_description:
+    //     "similique eum optio odit eius voluptatem error placeat cupiditate inventore facere nemo voluptas",link: "https://qwik.builder.io/docs/components/overview/",
+    // },
+    // {
+    //   name: "Delmoliton",
+    //   image:
+    //     "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
+    //   phrase: "Small text",
+    //   short_description:
+    //     "Lorem ipsum dolor sshort_descriptionsectetur adipisicing elit.",link: "https://qwik.builder.io/docs/components/overview/",
+    // },
+    // {
+    //   name: "Assmolition",
+    //   image:
+    //     "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
+    //   phrase: "Really small text",
+    //   short_description:
+    //     "Labore ducimus quos quam est eaque aliquid magnam! Ut",link: "https://qwik.builder.io/docs/components/overview/",
+    // },
+    // {
+    //   name: "Milmolition",
+    //   image:
+    //     "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
+    //   phrase: "Not so small text",
+    //   short_description:
+    //     "similique eum optio odit eius voluptatem error placeat cupiditate inventore facere nemo voluptas",link: "https://qwik.builder.io/docs/components/overview/",
+    // },
   ];
 
   const onClickButton = $(() => {

@@ -1,13 +1,13 @@
 .carousel {
   display: flex;
   flex-direction: row;
+  margin: 10px;
 }
 
 .card {
   height: 478px;
   width: 807px;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
   display: flex;
   flex-direction: row;
 }
@@ -77,12 +77,14 @@
 .learn-more {
   position: relative;
   padding-bottom: 32px;
+  cursor: pointer;
 }
 
 .marco {
   border: 2px solid #fff;
   width: 141px;
   height: 42px;
+  cursor: pointer;
 }
 
 .learn-more button {
@@ -98,4 +100,36 @@
   font-size: 14px;
   font-weight: 700;
   color: #000;
+  cursor: pointer;
+}
+
+.learn-more:hover {
+  transform: translate(-5%, -5%);
+  transition: ease-in-out 0.3s;
+}
+
+@media (max-width: 800px) {
+  .overlay {
+    width: 760px;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    width: 265px;
+  }
+
+  .info {
+    width: 235px;
+    height: 445px;
+  }
+
+  .overlay {
+    width: 265px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 5%,
+      rgba(0, 0, 0, 0.5) 85%
+    );
+  }
 }
