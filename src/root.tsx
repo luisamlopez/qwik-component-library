@@ -56,42 +56,48 @@ export default () => {
   const slides = [
     {
       name: "Delmoliton",
-      image: "/assets/img/example1.webp",
+      image:
+        "https://wordpress-873948-3215205.cloudwaysapps.com/wp-content/uploads/2023/03/concept-power-strength-healthy-lifestyle-sport-powerful-attractive-muscular-man-gym-1.webp",
       phrase: "Small text",
       short_description:
         "Lorem ipsum dolor sshort_descriptionsectetur adipisicing elit.",
     },
     {
       name: "Assmolition",
-      image: "/assets/img/example2.webp",
+      image:
+        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
       phrase: "Really small text",
       short_description:
         "Labore ducimus quos quam est eaque aliquid magnam! Ut",
     },
     {
       name: "Milmolition",
-      image: "/assets/img/example3.webp",
+      image:
+        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
       phrase: "Not so small text",
       short_description:
         "similique eum optio odit eius voluptatem error placeat cupiditate inventore facere nemo voluptas",
     },
     {
       name: "Delmoliton",
-      image: "/assets/img/example1.webp",
+      image:
+        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
       phrase: "Small text",
       short_description:
         "Lorem ipsum dolor sshort_descriptionsectetur adipisicing elit.",
     },
     {
       name: "Assmolition",
-      image: "/assets/img/example2.webp",
+      image:
+        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
       phrase: "Really small text",
       short_description:
         "Labore ducimus quos quam est eaque aliquid magnam! Ut",
     },
     {
       name: "Milmolition",
-      image: "/assets/img/example3.webp",
+      image:
+        "https://img.freepik.com/foto-gratis/flores-color-rosa-rosa_24837-301.jpg?w=826&t=st=1679967672~exp=1679968272~hmac=a68008407701633b1a3817b7311c60dd3ba459a18942eaab13297ba43b0f5bb5",
       phrase: "Not so small text",
       short_description:
         "similique eum optio odit eius voluptatem error placeat cupiditate inventore facere nemo voluptas",
