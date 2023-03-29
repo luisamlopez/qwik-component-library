@@ -1,4 +1,4 @@
-import { component$, useStore, useTask$ } from "@builder.io/qwik";
+import { component$, useStore, useTask$, $ } from "@builder.io/qwik";
 import "./carousel.css";
 
 export interface Slide {}
@@ -29,21 +29,65 @@ export const Carousel = component$((props: CarouselProps) => {
     }
   });
 
+  const nextSlide = $(() => {
+    setSlideIndex.slideIndex = setSlideIndex.slideIndex =
+      (setSlideIndex.slideIndex + props.slides.length + 1) %
+      props.slides.length;
+  });
+
+  const prevSlide = $(() => {
+    setSlideIndex.slideIndex = setSlideIndex.slideIndex =
+      (setSlideIndex.slideIndex + props.slides.length - 1) %
+      props.slides.length;
+  });
+
   return (
     //Wrapper for the carousel
     <div class="carousel">
-      {props.slides.map((slide) => (
+      <div class="relative">
+        <div class="card" onClick$={prevSlide}>
+          <img
+            class="prev"
+            src={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length - 1) %
+                  props.slides.length
+              ].image
+            }
+            alt={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length - 1) %
+                  props.slides.length
+              ].name
+            }
+          />
+        </div>
+
         <div class="card">
-          {/* Card info for the slide */}
           <div class="overlay"></div>
-          <img src={slide.image} alt={slide.name} />
+          <img
+            src={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length) %
+                  props.slides.length
+              ].image
+            }
+            alt={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length) %
+                  props.slides.length
+              ].name
+            }
+          />
 
           <div class="info">
             {/* Slide info */}
             <div class="phrase-name">
-              <span>{slide.phrase}</span>
-              <h2>{slide.name}</h2>
-              <p>{slide.short_description}</p>
+              <span class="span">
+                {props.slides[setSlideIndex.slideIndex].phrase}
+              </span>
+              <h2>{props.slides[setSlideIndex.slideIndex].name}</h2>
+              <p>{props.slides[setSlideIndex.slideIndex].short_description}</p>
             </div>
 
             {/* Button to redirect to the link */}
@@ -53,7 +97,8 @@ export const Carousel = component$((props: CarouselProps) => {
                 type="button"
                 onClick$={() => {
                   //Redirect to the link
-                  window.location.href = slide.link;
+                  window.location.href =
+                    props.slides[setSlideIndex.slideIndex].link;
                 }}
               >
                 Learn more →
@@ -61,7 +106,25 @@ export const Carousel = component$((props: CarouselProps) => {
             </div>
           </div>
         </div>
-      ))}
+
+        <div class="card" onClick$={nextSlide}>
+          <img
+            class="next"
+            src={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length + 1) %
+                  props.slides.length
+              ].image
+            }
+            alt={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length + 1) %
+                  props.slides.length
+              ].name
+            }
+          />
+        </div>
+      </div>
     </div>
   );
 });
