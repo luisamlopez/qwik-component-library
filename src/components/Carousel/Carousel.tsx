@@ -45,7 +45,7 @@ export const Carousel = component$((props: CarouselProps) => {
     //Wrapper for the carousel
     <div class="carousel">
       <div class="relative">
-        <div class="card" onClick$={prevSlide}>
+        {/* <div class="card" onClick$={prevSlide}>
           <img
             class="prev"
             src={
@@ -61,10 +61,76 @@ export const Carousel = component$((props: CarouselProps) => {
               ].name
             }
           />
+        </div> */}
+
+        <div class="card" onClick$={prevSlide}>
+          <div class="overlay"></div>
+          <img
+            src={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length - 1) %
+                  props.slides.length
+              ].image
+            }
+            alt={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length - 1) %
+                  props.slides.length
+              ].name
+            }
+          />
+
+          <div class="info">
+            {/* Slide info */}
+            <div class="phrase-name">
+              <span class="span">
+                {
+                  props.slides[
+                    (setSlideIndex.slideIndex + props.slides.length - 1) %
+                      props.slides.length
+                  ].phrase
+                }
+              </span>
+              <h2>
+                {
+                  props.slides[
+                    (setSlideIndex.slideIndex + props.slides.length - 1) %
+                      props.slides.length
+                  ].name
+                }
+              </h2>
+              <p>
+                {
+                  props.slides[
+                    (setSlideIndex.slideIndex + props.slides.length - 1) %
+                      props.slides.length
+                  ].short_description
+                }
+              </p>
+            </div>
+
+            {/* Button to redirect to the link */}
+            <div class="learn-more">
+              <div class="marco"></div>
+              <button
+                type="button"
+                onClick$={() => {
+                  //Redirect to the link
+                  window.location.href =
+                    props.slides[
+                      (setSlideIndex.slideIndex + props.slides.length - 1) %
+                        props.slides.length
+                    ].link;
+                }}
+              >
+                Learn more →
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
-          <div class="overlay"></div>
+        <div class="card_large">
+          <div class="overlay_large"></div>
           <img
             src={
               props.slides[
@@ -80,9 +146,9 @@ export const Carousel = component$((props: CarouselProps) => {
             }
           />
 
-          <div class="info">
+          <div class="info_large">
             {/* Slide info */}
-            <div class="phrase-name">
+            <div class="phrase-name_large">
               <span class="span">
                 {props.slides[setSlideIndex.slideIndex].phrase}
               </span>
@@ -107,7 +173,75 @@ export const Carousel = component$((props: CarouselProps) => {
           </div>
         </div>
 
+        {/* Show all the remain slides next to each other*/}
+
         <div class="card" onClick$={nextSlide}>
+          <div class="overlay"></div>
+          <img
+            src={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length + 1) %
+                  props.slides.length
+              ].image
+            }
+            alt={
+              props.slides[
+                (setSlideIndex.slideIndex + props.slides.length + 1) %
+                  props.slides.length
+              ].name
+            }
+          />
+
+          <div class="info">
+            {/* Slide info */}
+            <div class="phrase-name">
+              <span class="span">
+                {
+                  props.slides[
+                    (setSlideIndex.slideIndex + props.slides.length + 1) %
+                      props.slides.length
+                  ].phrase
+                }
+              </span>
+              <h2>
+                {
+                  props.slides[
+                    (setSlideIndex.slideIndex + props.slides.length + 1) %
+                      props.slides.length
+                  ].name
+                }
+              </h2>
+              <p>
+                {
+                  props.slides[
+                    (setSlideIndex.slideIndex + props.slides.length + 1) %
+                      props.slides.length
+                  ].short_description
+                }
+              </p>
+            </div>
+
+            {/* Button to redirect to the link */}
+            <div class="learn-more">
+              <div class="marco"></div>
+              <button
+                type="button"
+                onClick$={() => {
+                  //Redirect to the link
+                  window.location.href =
+                    props.slides[
+                      (setSlideIndex.slideIndex + props.slides.length + 1) %
+                        props.slides.length
+                    ].link;
+                }}
+              >
+                Learn more →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* <div class="card" onClick$={nextSlide}>
           <img
             class="next"
             src={
@@ -123,7 +257,7 @@ export const Carousel = component$((props: CarouselProps) => {
               ].name
             }
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
