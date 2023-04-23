@@ -1,15 +1,4 @@
-# Qwik Library ⚡️
-
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik on GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
-- [Partytown](https://partytown.builder.io/)
-- [Mitosis](https://github.com/BuilderIO/mitosis)
-- [Builder.io](https://www.builder.io/)
-
----
+#Go to [https://gitlab.com/luisamlopez/qwik-component-library](https://gitlab.com/luisamlopez/qwik-component-library) to see the component test with  [Storybook Framework Qwik](https://github.com/literalpie/storybook-framework-qwik)
 
 ## Project Structure
 
