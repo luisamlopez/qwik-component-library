@@ -91,7 +91,7 @@ _Documentation for Carousel_
 
 To run the project locally and see the rest of the components, follow these steps:
 
-Clone the repository: git clone https://github.com/luisamlopez/component-library.git
-Install dependencies: npm install
-Run Storybook: npm run storybook
-Visit http://localhost:6006 in your browser to explore and test the components using Storybook.
+1. Clone the repository: git clone https://github.com/luisamlopez/component-library.git
+2. Install dependencies: npm install
+3. Run Storybook: npm run storybook
+4. Visit http://localhost:6006 in your browser to explore and test the components using Storybook.
