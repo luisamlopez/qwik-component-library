@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import Carousel from "~/components/Carousel/Carousel";
+
+<Meta title="Carousel/Documentation" component={Carousel} />
+
+# Carousel
+
+Para usar este componente, debes importarlo desde:
+
+```
+../components/Carousel/Carousel
+```
+
+El carousel, para poder mostrarse en desktop y mobile, se debe utilizar con CarouselLarge y CarouselSmall.
+
+### Props
+
+- `slides: object array` - Array de objetos con las propiedades:
+  - `name: string`
+  - `image:  string`
+  - `phrase:  string`
+  - `short_description: string`
+  - `link:  string`
+
+### Ejemplo de uso
+
+```
+
+import Button from "../"components/Button/Button";
+
+function App() {
+  return (
+    <div>
+      <Carousel slides={slides} />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+### Notas
+
+- Se utiliza el link con un id o con una URL.
+- Si se desea cambiar el color del botón, se puede editar la variable `CarouselBttnColor` en el archivo `tailwind.config.js`.

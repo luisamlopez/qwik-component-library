@@ -1,6 +1,6 @@
 import { QRL, component$ } from "@builder.io/qwik";
 import "./imageBanner.css";
-import { Button, createButton } from "../Button/Button";
+import { Button } from "../Button/Button";
 
 export interface ImageBannerActions {}
 
@@ -14,53 +14,6 @@ export interface ImageBannerProps {
 //Arrow function to hide component
 export const onClickExit = () => {
   document.getElementById("image-banner")!.style.display = "none";
-};
-
-/**
- * Primary UI component for user interaction on Storybook
- */
-export const createImageBanner = (props: ImageBannerProps) => {
-  const wrapper = document.createElement("div");
-  const div = document.createElement("div");
-  const overlay = document.createElement("div");
-  const title = document.createElement("div");
-  const message = document.createElement("div");
-  const exit = document.createElement("div");
-  const button = document.createElement("div");
-
-  div.className = "image-banner";
-  overlay.className = "image-banner__overlay";
-  title.className = "image-banner__title";
-  message.className = "image-banner__message";
-  exit.className = "image-banner__exit";
-  button.className = "image-banner__button";
-
-  div.style.backgroundImage = `url(${props.backgroundImage})`;
-
-  title.innerHTML = props.title;
-  message.innerHTML = props.message;
-  exit.innerHTML = "X";
-
-  exit.onclick = onClickExit;
-
-  button.appendChild(
-    createButton({
-      label: "Ir al sitio",
-      primary: true,
-      backgroundColor: "transparent",
-      onClick: props.onClick,
-    })
-  );
-
-  div.appendChild(overlay);
-  div.appendChild(title);
-  div.appendChild(message);
-  div.appendChild(exit);
-  div.appendChild(button);
-
-  wrapper.appendChild(div);
-
-  return wrapper;
 };
 
 /**

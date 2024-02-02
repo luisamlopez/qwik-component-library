@@ -18,14 +18,14 @@
   align-items: center;
   cursor: pointer;
   font-weight: bold;
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   border-radius: 4px 0 0 4px;
 }
 
 .service-info {
   padding: 8px;
   align-items: center;
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   width: 65%;
 }
 
@@ -55,7 +55,7 @@
   align-items: center;
   cursor: pointer;
   font-weight: bold;
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   font-size: 18px;
 }
 

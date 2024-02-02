@@ -68,48 +68,6 @@ export const getTextColor = function (bgColor: string) {
 //End of functions to get random color and match the proper font color with the background color
 
 /**
- * Primary UI component for user interaction on Storybook
- */
-export const createCardService = (props: CardServiceProps) => {
-  const serviceCard = document.createElement("div");
-  const icon = document.createElement("div");
-  const serviceInfo = document.createElement("div");
-  const serviceName = document.createElement("p");
-  const serviceDescription = document.createElement("p");
-  const button = document.createElement("div");
-
-  serviceCard.className = "service-card";
-  serviceInfo.className = "service-info";
-  icon.className = "icon";
-  serviceName.className = "service-name";
-  serviceDescription.className = "service-description";
-  button.className = "button";
-
-  serviceName.innerText = props.name;
-  serviceDescription.innerText = props.description;
-  const bgColor = randomColor();
-  icon.style.backgroundColor = bgColor;
-  icon.style.color = getTextColor(bgColor);
-  icon.innerText = getInitials(props.name).toUpperCase();
-
-  button.innerText = "➡";
-  button.onclick = props.onClick;
-
-  serviceCard.appendChild(icon);
-
-  const div = document.createElement("div");
-  div.append(serviceName, serviceDescription);
-
-  serviceInfo.appendChild(div);
-
-  serviceCard.appendChild(serviceInfo);
-
-  serviceCard.appendChild(button);
-
-  return serviceCard;
-};
-
-/**
  * Primary UI component with Qwik
  */
 export const CardService = component$((props: CardServiceProps) => {
@@ -132,7 +90,7 @@ export const CardService = component$((props: CardServiceProps) => {
         </div>
       </div>
       <div class="button" onClick$={props.onClick}>
-        ➡
+        ⇾
       </div>
     </div>
   );

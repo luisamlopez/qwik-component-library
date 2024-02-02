@@ -1,6 +1,6 @@
 import "./cardProduct.css";
 import { component$ } from "@builder.io/qwik";
-import { Avatar, createAvatar } from "../../Avatar/Avatar";
+import { Logo } from "../../Logo/Logo";
 
 export interface CardProductProps {
   name: string;
@@ -15,45 +15,6 @@ export interface CardProductProps {
 }
 
 /**
- * Primary UI component for user interaction on Storybook
- */
-export const createCardProduct = (props: CardProductProps) => {
-  const productCard = document.createElement("div");
-  const productInfo = document.createElement("div");
-  const productName = document.createElement("p");
-  const productDescription = document.createElement("p");
-  const productPrice = document.createElement("p");
-
-  productCard.className = "product-card";
-  productInfo.className = "product-info";
-  productName.className = "product-name";
-  productDescription.className = "product-description";
-  productPrice.className = "product-price";
-
-  productCard.style.backgroundColor = props.backgroundColor || "#fff";
-  productCard.style.color = props.fontColor || "#000";
-
-  productName.innerText = props.name;
-  productDescription.innerText = props.description;
-  productPrice.innerText = "$ " + props.price.toString();
-
-  productCard.appendChild(
-    createAvatar({ url: props.image, alt: props.name, size: "240px" })
-  );
-
-  productCard.onclick = props.onClick;
-
-  const div = document.createElement("div");
-  div.append(productName, productDescription, productPrice);
-
-  productInfo.appendChild(div);
-
-  productCard.appendChild(productInfo);
-
-  return productCard;
-};
-
-/**
  * Primary UI component with Qwik
  */
 export const CardProduct = component$((props: CardProductProps) => {
@@ -63,7 +24,12 @@ export const CardProduct = component$((props: CardProductProps) => {
       onClick$={props.onClick}
       style={{ backgroundColor: props.backgroundColor, color: props.fontColor }}
     >
-      <Avatar url={props.image} alt={props.name} size="240px" />
+      <Logo
+        link={props.image}
+        logo={props.image}
+        width={240}
+        borderRadius="4px"
+      />
       <div class="product-info">
         <div>
           <p class="product-name">{props.name}</p>

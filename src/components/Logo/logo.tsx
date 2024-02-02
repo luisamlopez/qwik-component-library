@@ -4,34 +4,25 @@ export interface LogoProps {
   logo: any;
   link: string;
   width: number;
+  borderRadius?: string;
 }
-
-/**
- * Primary UI component for user interaction on Storybook
- */
-export const createLogo = (props: LogoProps) => {
-  const logo = document.createElement("logo");
-  const a = document.createElement("a");
-  const img = document.createElement("img");
-
-  logo.style.textAlign = "center";
-  a.href = props.link;
-  img.alt = "Logo";
-  img.width = props.width;
-  img.src = props.logo;
-  a.appendChild(img);
-  logo.appendChild(a);
-  return logo;
-};
 
 /**
  * Primary UI component with Qwik
  */
 export const Logo = component$((props: LogoProps) => {
+  const borderRadius = props.borderRadius ? props.borderRadius : 0;
   return (
     <logo style={{ "text-align": "center" }}>
       <a href={props.link}>
-        <img alt="Logo" width={props.width} src={props.logo} />
+        <img
+          alt="Logo"
+          width={props.width}
+          src={props.logo}
+          style={
+            "border-radius:" + borderRadius + " " + borderRadius + " 0px 0px"
+          }
+        />
       </a>
     </logo>
   );

@@ -11,52 +11,19 @@ export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 /**
- * Primary UI component for user interaction on Storybook
- */
-
-export const createDropdown = (props: DropdownProps) => {
-  //const form = document.createElement("form");
-  const div = document.createElement("div");
-  const label = document.createElement("label");
-  const select = document.createElement("select");
-  div.className = "dropdown-select";
-
-  label.innerHTML = props.label;
-  {
-    props.options.map((option) => {
-      const op = document.createElement("option");
-      op.append(option.key);
-      select.appendChild(op);
-    });
-  }
-
-  div.className = ["dropdown-select", `dropdown-select--${props.size}`].join(
-    " "
-  );
-
-  select.className = ["dropdown-select", `dropdown-select--${props.size}`].join(
-    " "
-  );
-  label.style.color = props.fontColor!;
-  select.style.border = "0.5px solid" + props.color!;
-  select.style.width = props.fullWidth ? "100%" : "auto";
-
-  div.style.width = props.fullWidth ? "100%" : "auto";
-
-  div.style.marginBottom = "4px";
-
-  div.appendChild(label);
-  div.appendChild(select);
-  return div;
-};
-
-/**
  * Primary UI component with Qwik
  */
 export const Dropdown = component$((props: DropdownProps) => {
   return (
     <div class="dropdown">
-      <label for="dropdown">{props.label}</label>
+      <label
+        for="dropdown"
+        style={{
+          color: props.fontColor,
+        }}
+      >
+        {props.label}
+      </label>
       <select
         autoFocus
         name="dropdown"

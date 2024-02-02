@@ -15,53 +15,6 @@ export interface ButtonProps {
 }
 
 /**
- * Primary UI component for user interaction on Storybook
- */
-export const createButton = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  onClick,
-  fullWidth,
-  borderRadius,
-  condensed,
-  margin,
-  fontColor,
-}: ButtonProps) => {
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.innerText = label;
-  btn.addEventListener("click", onClick!);
-
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
-
-  btn.className = ["storybook-button", `storybook-button--${size}`, mode].join(
-    " "
-  );
-
-  if (mode === "storybook-button--secondary" && backgroundColor) {
-    btn.style.border = "1px solid" + backgroundColor!;
-  } else {
-    btn.style.backgroundColor = backgroundColor!;
-  }
-
-  btn.style.borderRadius = borderRadius ? borderRadius : "2px";
-
-  btn.style.fontSize = condensed ? "12px" : "16px";
-
-  btn.style.color = primary ? "#fff" : fontColor!;
-
-  btn.style.width = fullWidth ? "100%" : "auto";
-
-  btn.style.margin = margin ? margin : "4px";
-
-  return btn;
-};
-
-/**
  * Primary UI component with Qwik
  */
 export const Button = component$((props: ButtonProps) => {

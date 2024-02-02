@@ -8,23 +8,6 @@ export interface AvatarProps {
   //Styles
   borderRadius?: string;
 }
-/**
- * Primary UI component for user interaction on Storybook
- */
-export const createAvatar = (props: AvatarProps) => {
-  const avatar = document.createElement("img");
-
-  avatar.className = "avatar";
-  if (props.size) {
-    avatar.style.width = props.size;
-  } else {
-    avatar.style.width = "50px";
-  }
-
-  avatar.alt = props.alt;
-  avatar.src = props.url;
-  return avatar;
-};
 
 /**
  * Primary UI component with Qwik

@@ -5,7 +5,6 @@ import {
   useClientEffect$,
   useTask$,
 } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
 
 export interface CarouselProps {
   slides: {
@@ -17,7 +16,7 @@ export interface CarouselProps {
   }[];
 }
 
-export const Carousel = component$((props: CarouselProps) => {
+export const Carousel = component$(({ slides }: CarouselProps) => {
   const setSlideIndex = useStore({
     slideIndex: 0,
     activeIndex: 0,
@@ -48,13 +47,12 @@ export const Carousel = component$((props: CarouselProps) => {
 
   return (
     <>
-      {/* Desktop version */}
       <div class="hidden lg:inline">
         <div
           ref={containerRef}
           class="carousel relative flex space-x-[36px] overflow-x-scroll snap-x-mandatory whitespace-nowrap px-20"
         >
-          {props.slides.map((item: any, index: any) => (
+          {slides.map((item: any, index: any) => (
             <div
               key={index}
               class={`${
@@ -119,26 +117,24 @@ export const Carousel = component$((props: CarouselProps) => {
                 <div class="relative mt-auto pb-32">
                   <div class="border-freetrial border-2 border-White w-[141px] h-42"></div>
 
-                  <Link href={item.link}>
-                    <button
-                      type="button"
-                      class=" absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 flex whitespace-nowrap border border-transparent bg-CarouselBttnColor px-4 py-2 text-sm font-medium shadow-sm hover:bg-CarouselBttnColor focus:outline-none font-PPNeueMontreal-Book text-Black"
+                  <button
+                    type="button"
+                    class="CenterAbsolute flex whitespace-nowrap border border-transparent bg-CarouselBttnColor px-4 py-2 text-sm font-medium shadow-sm hover:bg-CarouselBttnColor focus:outline-none font-PPNeueMontreal-Book text-Black"
+                  >
+                    Learn more
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-6 ml-2"
                     >
-                      Learn more
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="w-6 ml-2"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                  </Link>
+                      <path
+                        fillRule="evenodd"
+                        d="M3.75 12a.75.75 0 01.75-.75h13.19l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 11-1.06-1.06l5.47-5.47H4.5a.75.75 0 01-.75-.75z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
               {/* ................................ */}
@@ -146,7 +142,6 @@ export const Carousel = component$((props: CarouselProps) => {
           ))}
         </div>
       </div>
-      {/* Mobile version */}
       <div class="lg:hidden">
         <div class="carousel">
           <div class="relative">
@@ -154,15 +149,15 @@ export const Carousel = component$((props: CarouselProps) => {
               <img
                 class="w-[40px] h-[438px] rounded-tr-2xl rounded-br-2xl object-cover object-left"
                 src={
-                  props.slides[
-                    (setSlideIndex.slideIndex + props.slides.length - 1) %
-                      props.slides.length
+                  slides[
+                    (setSlideIndex.slideIndex + slides.length - 1) %
+                      slides.length
                   ].image
                 }
                 alt={
-                  props.slides[
-                    (setSlideIndex.slideIndex + props.slides.length - 1) %
-                      props.slides.length
+                  slides[
+                    (setSlideIndex.slideIndex + slides.length - 1) %
+                      slides.length
                   ].name
                 }
               />
@@ -171,8 +166,8 @@ export const Carousel = component$((props: CarouselProps) => {
             <div class="w-[265px] h-[478px] sm:w-[80vw] mx-auto">
               <img
                 class="w-full h-full rounded-2xl object-cover mx-auto"
-                src={props.slides[setSlideIndex.slideIndex].image}
-                alt={props.slides[setSlideIndex.slideIndex].name}
+                src={slides[setSlideIndex.slideIndex].image}
+                alt={slides[setSlideIndex.slideIndex].name}
               />
 
               <div class="hidden absolute w-[807px] h-[478px] top-0 rounded-2xl lg:flex">
@@ -183,22 +178,22 @@ export const Carousel = component$((props: CarouselProps) => {
               <div class="absolute flex flex-col top-0 min-w-[265px] max-w-[265px] w-[265px] sm:max-w-[80vw] sm:min-w-[80vw] sm:w-[80vw] lg:min-w-[265px] lg:max-w-[265px] lg:w-[265px] h-full text-White text-center">
                 <div class="bg-Black pt-8 rounded-t-2xl lg:rounded-none lg:bg-transparent">
                   <span class="text-xl font-semibold font-ppneuemontrealMedium px-2">
-                    {props.slides[setSlideIndex.slideIndex].phrase}
+                    {slides[setSlideIndex.slideIndex].phrase}
                   </span>
                   <h2 class="text-4xl font-montserrat break-words text-center px-4 pt-2">
-                    {props.slides[setSlideIndex.slideIndex].name}
+                    {slides[setSlideIndex.slideIndex].name}
                   </h2>
                 </div>
                 <div class="bg-gradient-to-b from-Black pb-6 pt-2 lg:from-transparent">
                   <p class="text-lg font-ppneuemontrealMedium text-[#cbcbcb] px-2">
-                    {props.slides[setSlideIndex.slideIndex].short_description}
+                    {slides[setSlideIndex.slideIndex].short_description}
                   </p>
                 </div>
                 <div class="relative mt-auto pb-32">
                   <div class="border-freetrial border-2 border-White w-[141px] h-42"></div>
                   <button
                     type="button"
-                    class=" absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 flex whitespace-nowrap border border-transparent bg-CarouselBttnColor px-4 py-2 text-sm font-medium shadow-sm hover:bg-CarouselBttnColor focus:outline-none font-PPNeueMontreal-Book text-Black"
+                    class="CenterAbsolute flex whitespace-nowrap border border-transparent bg-CarouselBttnColor px-4 py-2 text-sm font-medium shadow-sm hover:bg-CarouselBttnColor focus:outline-none font-PPNeueMontreal-Book text-Black"
                   >
                     Learn more
                     <svg
@@ -222,15 +217,15 @@ export const Carousel = component$((props: CarouselProps) => {
               <img
                 class=" w-[40px] h-[438px] rounded-tl-2xl rounded-bl-2xl object-cover object-right"
                 src={
-                  props.slides[
-                    (setSlideIndex.slideIndex + props.slides.length - 1) %
-                      props.slides.length
+                  slides[
+                    (setSlideIndex.slideIndex + slides.length - 1) %
+                      slides.length
                   ].image
                 }
                 alt={
-                  props.slides[
-                    (setSlideIndex.slideIndex + props.slides.length - 1) %
-                      props.slides.length
+                  slides[
+                    (setSlideIndex.slideIndex + slides.length - 1) %
+                      slides.length
                   ].name
                 }
               />
@@ -240,8 +235,8 @@ export const Carousel = component$((props: CarouselProps) => {
               class="absolute top-1/2 right-2"
               onClick$={() =>
                 (setSlideIndex.slideIndex =
-                  (setSlideIndex.slideIndex + props.slides.length - 1) %
-                  props.slides.length)
+                  (setSlideIndex.slideIndex + slides.length - 1) %
+                  slides.length)
               }
             >
               <svg
@@ -263,7 +258,7 @@ export const Carousel = component$((props: CarouselProps) => {
               class="absolute top-1/2 left-2"
               onClick$={() =>
                 (setSlideIndex.slideIndex =
-                  (setSlideIndex.slideIndex + 1) % props.slides.length)
+                  (setSlideIndex.slideIndex + 1) % slides.length)
               }
             >
               <svg
